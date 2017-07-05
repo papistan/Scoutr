@@ -1,79 +1,61 @@
-import { Actions } from 'react-native-router-flux';
-import React, { Component } from 'react';
-import {View} from 'react-native';
-import { Button, CardSection, Input, Card, Flip} from './common';
+import React, {Component} from 'react';
+import { Text }  from 'react-native';
+import {connect} from 'react-redux';
+import {emailChanged, passwordChange, loginUser} from '../actions';
+import {Card, CardSection, Button, Input, Spinner} from './common';
 
-class LoginForm extends Component {
-  state = { email: '', password: '', error: '', loading: false, token: "" };
-
- onButtonPress() {
-    const { email, password } = this.state;
-
-    this.setState({ error: '', loading: true });
-     axios.get('https://localites.herokuapp.com/users', {params: {email: this.state.email, password: this.state.password}})
-     .then(response => this.setState({ user: response.data.id, plans: response.data.plans}))
+class  LoginForm extends Component {
+  onEmailChange(text){
+    this.props.emailChanged(text);
   }
-
-  onLoginFail() {
-    this.setState({ error: 'Authentication Failed', loading: false });
+  onPasswordChange(text) {
+      this.props.passwordChange(text);
   }
+  onButtonPress() {
+      const {email, password} = this.props;
 
-  onLoginSuccess() {
-    this.setState({
-      email: '',
-      password: '',
-      loading: false,
-      error: ''
-    });
+      this.props.loginUser({email, password});
   }
-
   renderButton() {
-    if (this.state.loading) {
-      return <Spinner size="small" />;
+    if (this.props.loading) {
+      return <Spinner size="large" />;
     }
-
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>
-        Log in
-      </Button>
+       <Button onPress={this.onButtonPress.bind(this)} >
+           Login
+       </Button>
     );
   }
 
-  render() {
+  render () {
     return (
-      <View>
-
+      <Card>
         <CardSection>
           <Input
             label="Email"
-            placeholder="email@gmail.com"
-            value={this.state.email}
-            onChangeText={email => this.setState({ email })}
-            />
+            placeholder="Test@test.com"
+            onChangeText={this.onEmailChange.bind(this)}
+            value={this.props.email}
+          />
         </CardSection>
 
         <CardSection>
           <Input
             secureTextEntry
             label="Password"
-            placeholder="password"
-            value={this.state.password}
-            onChangeText={password => this.setState({ password })}
+            placeholder="Password"
+            onChangeText={this.onPasswordChange.bind(this)}
+            value={this.props.password}
           />
         </CardSection>
-
-        <Text style={styles.errorTextStyle}>
-          {this.state.error}
-        </Text>
-
+        <Text style={styles.errorTextStyle}> {this.props.error} </Text>
         <CardSection>
           {this.renderButton()}
         </CardSection>
-      </View>
+      </Card>
     );
   }
 }
-
 const styles = {
   errorTextStyle: {
     fontSize: 20,
@@ -82,5 +64,14 @@ const styles = {
   }
 };
 
-export default LoginForm;
+const mapStateToProps = ({auth}) => { // comes from index reducer
+  const {email, password, error, loading } = auth;
 
+  return { email, password, error, loading}; // comes form auth reducer
+};
+
+export default  connect(mapStateToProps, {
+  emailChanged,
+  passwordChange,
+  loginUser
+})(LoginForm);
