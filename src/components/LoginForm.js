@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text }  from 'react-native';
+import { Text, View }  from 'react-native';
 import {connect} from 'react-redux';
 import {emailChanged, passwordChange, loginUser} from '../actions';
 import {Card, CardSection, Button, Input, Spinner} from './common';
@@ -29,7 +29,7 @@ class  LoginForm extends Component {
 
   render () {
     return (
-      <Card>
+      <View>
         <CardSection>
           <Input
             label="Email"
@@ -52,7 +52,7 @@ class  LoginForm extends Component {
         <CardSection>
           {this.renderButton()}
         </CardSection>
-      </Card>
+      </View>
     );
   }
 }
