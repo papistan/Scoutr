@@ -2,6 +2,7 @@ import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import FlipCards from './components/FlipCards';
+import PlanCreate from './components/PlanCreate'
 
 
 const RouterComponent = () => {
@@ -14,6 +15,12 @@ const RouterComponent = () => {
 
       <Scene key="main">
 
+        <Scene
+          key="createPlan"
+          component={PlanCreate}
+          title="New Plan"
+
+        />
         <Scene
           key="flipCards"
           component={FlipCards}
