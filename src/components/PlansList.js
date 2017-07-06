@@ -36,13 +36,11 @@ class  PlansList extends Component {
   render () {
     return (
       <View>
-
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
-          renderRow={this.renderRow} />
-
-
+          renderRow={this.renderRow}
+          />
       </View>
 
     );
