@@ -13,6 +13,7 @@ export default React.createClass({
     return {
       cards: [],
       cardsCount: 0,
+      offset: 50,
       outOfCards: false
     }
   },
@@ -21,7 +22,7 @@ export default React.createClass({
     var neighborhood = "soma";
     axios.get('http://localhost:3000/locales'
     , { params: {
-    city: city, neighborhood: neighborhood
+    city: city, neighborhood: neighborhood, offset: 0
   }})
   .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
@@ -42,7 +43,7 @@ export default React.createClass({
 
     if (this.state.cardsCount - index <= 1 ) {
       console.log(`Adding more cards`);
-        axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(response =>  this.setState({ cards: this.state.cards.concat(response.data), cardsCount: (this.state.cardsCount += response.data.length) }));
+        axios.get('http://localhost:3000/locales', { params: {city: city, neighborhood: neighborhood, offset: this.state.yelpOffset }}).then(response =>  this.setState({ cards: this.state.cards.concat(response.data), cardsCount: (this.state.cardsCount += response.data.length), offset: (this.state.yelpOffset += 50) }));
       };
 
     },
