@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm';
 import FlipCards from './components/FlipCards';
 import PlanCreate from './components/PlanCreate';
 import PlansList from './components/PlansList';
+import PlanLocalesList from './components/PlanLocalesList';
 
 
 const RouterComponent = () => {
@@ -15,12 +16,20 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="main">
-         <Scene
+       
+        <Scene
           onRight={() => Actions.createPlan()}
           rightTitle='Create Plan'
           key="plansList"
           component={PlansList}
           title="Plans List"
+        />
+        <Scene
+          onRight={() => Actions.createLocale()}
+          rightTitle='Add Locale'
+          key="planLocalesList"
+          component={PlanLocalesList}
+          title="Plan Locales List"
         />
         <Scene
           key="createPlan"

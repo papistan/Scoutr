@@ -3,25 +3,19 @@ import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
-class ListItem extends Component {
-  onRowPress() {
-    Actions.planLocalesList({ plan: this.props.plan });
-  }
-
+class LocaleListItem extends Component {
 
   render() {
-    const { title } = this.props.plan;
+    const { title } = this.props.planlocale;
 
     return (
-      <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
-        <View>
+      
           <CardSection>
             <Text style={styles.titleStyle}>
               {title}
             </Text>
           </CardSection>
-        </View>
-      </TouchableWithoutFeedback>
+        
     );
   }
 }
@@ -29,8 +23,10 @@ class ListItem extends Component {
 const styles = {
   titleStyle: {
     fontSize: 18,
-    paddingLeft: 15
+    color: 'white',
+    paddingLeft: 15,
+    backgroundColor: 'black'
   }
 };
 
-export default ListItem;
+export default LocaleListItem;

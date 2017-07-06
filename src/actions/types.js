@@ -12,8 +12,8 @@ export const PLANS_FETCH = 'plans_fetch';
 export const PLAN_CREATE = 'plan_create'; // works
 export const PLAN_UPDATE = 'plan_update'; // works
 
-// plan local
-export const PLAN_LOCALS_FETCH = 'plan_locals_fetch';
+// plan locale
+export const PLAN_LOCALES_FETCH = 'plan_locales_fetch';
 
-// local
-export const LOCAL_FETCH = 'plan_locals_fetch';
+// locale
+export const LOCALE_FETCH = 'locale_fetch';
