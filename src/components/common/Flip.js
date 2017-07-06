@@ -17,10 +17,22 @@ export default React.createClass({
     }
   },
   componentWillMount() {
-    axios.get('https://localites.herokuapp.com/locales').then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
+    var city = "san francisco";
+    var neighborhood = "soma";
+    axios.get('http://localhost:3000/locales'
+    , { params: {
+    city: city, neighborhood: neighborhood
+  }})
+  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
     console.log("yup", card)
+    var plan_id = 1;
+    axios.post('http://localhost:3000/locales', { params: {
+      plan_id: plan_id,
+      card: card
+      }
+    })
   },
   handleNope (card) {
     console.log("nope")
@@ -53,5 +65,3 @@ export default React.createClass({
     )
   }
 })
-
-
