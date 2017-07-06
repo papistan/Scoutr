@@ -20,7 +20,7 @@ export default React.createClass({
     axios.get('https://localites.herokuapp.com/locales').then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
-    console.log("yup")
+    console.log("yup", card)
   },
   handleNope (card) {
     console.log("nope")

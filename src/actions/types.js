@@ -9,8 +9,10 @@ export const LOGIN_USER = 'login_user';
 export const PLANS_FETCH = 'plans_fetch';
 
 // plan
-export const PLAN_CREATE = 'plan_create';
-export const PLAN_UPDATE = 'plan_update';
+export const PLAN_CREATE = 'plan_create'; // works
+export const PLAN_UPDATE = 'plan_update'; // works
+
+// plan local
 export const PLAN_LOCALS_FETCH = 'plan_locals_fetch';
 
 // local

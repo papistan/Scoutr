@@ -36,6 +36,7 @@ class  LoginForm extends Component {
             placeholder="Test@test.com"
             onChangeText={this.onEmailChange.bind(this)}
             value={this.props.email}
+            autoCorrect={false}
           />
         </CardSection>
 
@@ -46,6 +47,7 @@ class  LoginForm extends Component {
             placeholder="Password"
             onChangeText={this.onPasswordChange.bind(this)}
             value={this.props.password}
+            autoCorrect={false}
           />
         </CardSection>
         <Text style={styles.errorTextStyle}> {this.props.error} </Text>
