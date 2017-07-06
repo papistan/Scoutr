@@ -11,7 +11,14 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
-        <Scene key="login" component={LoginForm} title="Please Login" initial />
+        <Scene
+        onRight={() => Actions.register()}
+        rightTitle='Register'
+        key="login"
+        component={LoginForm}
+        title="Please Login"
+        initial />
+        <Scene key="register" component={LoginForm} title="New Account"  />
       </Scene>
 
       <Scene key="main">
