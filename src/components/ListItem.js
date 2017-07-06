@@ -6,13 +6,13 @@ import { CardSection } from './common';
 class ListItem extends Component {
 
   render() {
-    const { name } = this.props.employee;
+    const { title } = this.props.plan;
 
     return (
 
           <CardSection>
             <Text style={styles.titleStyle}>
-              {name}
+              {title}
             </Text>
           </CardSection>
 

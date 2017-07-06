@@ -1,20 +1,20 @@
 import {
-  EMPLOYEE_UPDATE,
-  EMPLOYEE_CREATE
+  PLAN_UPDATE,
+  PLAN_CREATE
 }  from '../actions/types';
 
 const INITIAL_STATE = {
-  name: '',
-  phone: '',
-  shift: ''
+  title: '',
+  city: '',
+  district: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case EMPLOYEE_UPDATE:
+    case PLAN_UPDATE:
       return { ...state, [action.payload.prop]: action.payload.value};
-    case EMPLOYEE_CREATE:
+    case PLAN_CREATE:
       return INITIAL_STATE;
     default:
       return state;

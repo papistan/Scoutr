@@ -1,14 +1,12 @@
 import {
-  EMPLOYEE_FETCH_SUCCESS
+  PLANS_FETCH
 } from '../actions/types';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = {plans: []};
 
 export default (state = INITIAL_STATE, action) => {
-   console.log("PAYLOAD", action)
   switch (action.type) {
-    case EMPLOYEE_FETCH_SUCCESS:
-      console.log("PAYLOADdaslf asf",action.payload)
+    case PLANS_FETCH:
       return action.payload;
     default:
       return state;
