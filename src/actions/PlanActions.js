@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import axios from 'axios';
 import {Actions} from 'react-native-router-flux'
 import {
   PLAN_UPDATE,
@@ -13,15 +14,14 @@ export const planUpdate = ({prop, value}) => {
   };
 };
 export const planCreate = ({ title, city, district}) => {
-  const { currentUser } = firebase.auth();
-
+  // const { currentUser } = firebase.auth();
   return (dispatch) => {
-    firebase.database().ref(`/users/${currentUser.uid}/plans`)
-      .push({title, city, district })
-      .then(() => {
-        dispatch({ type: PLAN_CREATE });
-        Actions.plan();
-      });
+    var user_id = 1;
+     axios.post('http://localhost:3000/plans', { params: { user_id: user_id, title: title, city: city, district: district}
+    }).then((response) => {
+      dispatch({ type: PLAN_CREATE, payload: response.data});
+      Actions.plan();
+    });
   };
 };
 export const plansFetch = () => {
