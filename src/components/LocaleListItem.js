@@ -6,13 +6,12 @@ import { CardSection } from './common';
 class LocaleListItem extends Component {
 
   render() {
-    const { title } = this.props.planlocale;
-
+    const  locale  = this.props.planLocale;
     return (
 
           <CardSection>
             <Text style={styles.titleStyle}>
-              {title}
+              {locale.name}
             </Text>
           </CardSection>
 
@@ -23,9 +22,8 @@ class LocaleListItem extends Component {
 const styles = {
   titleStyle: {
     fontSize: 18,
-    color: 'white',
     paddingLeft: 15,
-    backgroundColor: 'black'
+
   }
 };
 

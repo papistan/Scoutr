@@ -6,8 +6,9 @@ import {
 
 export const planLocalesFetch = () => {
   return (dispatch) => {
-    var plan_id = 1;
+    var plan_id = 1git;
   axios.get(`http://localhost:3000/plans/${plan_id}`).then((response) => {
+
     dispatch({type: PLAN_LOCALES_FETCH, payload: response.data})
   });
   };

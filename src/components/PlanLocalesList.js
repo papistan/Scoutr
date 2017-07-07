@@ -21,16 +21,15 @@ class  PlanLocalesList extends Component {
     })
     this.dataSource = ds.cloneWithRows(planLocales);
   }
-   renderRow(planlocale) {
+   renderRow(planLocale) {
 
-    return <LocaleListItem planlocale={planlocale} />;
+    return <LocaleListItem planLocale={planLocale} />;
   }
 
   render () {
     return (
 
       <View>
-
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
@@ -42,11 +41,11 @@ class  PlanLocalesList extends Component {
   }
 }
 const mapStateToProps = state => {
-  const planLocales = _.map(state.planLocales, (val, uid) => {
+  const plan = state.planLocales.plan
+  const planLocales = _.map(state.planLocales.locales, (val, uid) => {
     return { ...val, uid };
   });
-  debugger
-  return { planLocales };
-};
 
+  return { planLocales, plan};
+};
 export default  connect(mapStateToProps, {planLocalesFetch})(PlanLocalesList);
