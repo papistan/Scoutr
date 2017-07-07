@@ -13,9 +13,9 @@ const RouterComponent = () => {
 
       <Scene key="auth">
         <Scene
-          key="createPlan"
-          component={PlanCreate}
-          title="New Plan"
+          key="planLocalesList"
+          component={PlanLocalesList}
+          title="Plan Locales List"
           initial
         />
 
@@ -30,7 +30,7 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="main">
-       
+
         <Scene
           onRight={() => Actions.createPlan()}
           rightTitle='Create Plan'
@@ -39,13 +39,7 @@ const RouterComponent = () => {
           title="Plans List"
 
         />
-        <Scene
-          onRight={() => Actions.createLocale()}
-          rightTitle='Add Locale'
-          key="planLocalesList"
-          component={PlanLocalesList}
-          title="Plan Locales List"
-        />
+
         <Scene
           key="createPlan"
           component={PlanCreate}
@@ -58,6 +52,13 @@ const RouterComponent = () => {
           key="flipCards"
           component={FlipCards}
           title="FlipCards"
+
+        />
+        <Scene
+
+          key="planLocalesList"
+          component={PlanLocalesList}
+          title="Plan Locales List"
 
         />
         </Scene>

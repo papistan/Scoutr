@@ -6,13 +6,6 @@ import {planLocalesFetch} from '../actions';
 import LocaleListItem from './LocaleListItem'
 
 class  PlanLocalesList extends Component {
-  renderOnEmpty() {
-    return (
-        <View style={{ flex:0.5 }}>
-            <Text>List is Empty</Text>
-        </View>
-    )
-}
 
   componentWillMount() {
     this.props.planLocalesFetch();

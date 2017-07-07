@@ -9,13 +9,13 @@ class LocaleListItem extends Component {
     const { title } = this.props.planlocale;
 
     return (
-      
+
           <CardSection>
             <Text style={styles.titleStyle}>
               {title}
             </Text>
           </CardSection>
-        
+
     );
   }
 }
