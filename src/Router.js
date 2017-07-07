@@ -12,6 +12,7 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
+
         <Scene
           key="planLocalesList"
           component={PlanLocalesList}
@@ -37,7 +38,7 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Plans List"
-
+          initial
         />
 
         <Scene

@@ -15,11 +15,11 @@ class  PlanLocalesList extends Component {
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps)
   }
-  createDataSource({planlocales}) {
+  createDataSource({planLocales}) {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
-    this.dataSource = ds.cloneWithRows(planlocales);
+    this.dataSource = ds.cloneWithRows(planLocales);
   }
    renderRow(planlocale) {
 
@@ -28,6 +28,7 @@ class  PlanLocalesList extends Component {
 
   render () {
     return (
+
       <View>
 
         <ListView
@@ -41,11 +42,11 @@ class  PlanLocalesList extends Component {
   }
 }
 const mapStateToProps = state => {
-  const planlocales = _.map(state.planlocales, (val, uid) => {
+  const planLocales = _.map(state.planLocales, (val, uid) => {
     return { ...val, uid };
   });
-
-  return { planlocales };
+  debugger
+  return { planLocales };
 };
 
 export default  connect(mapStateToProps, {planLocalesFetch})(PlanLocalesList);

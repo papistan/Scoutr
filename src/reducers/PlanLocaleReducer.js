@@ -7,7 +7,8 @@ const INITIAL_STATE = {plan: {}, locales: []};
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PLAN_LOCALES_FETCH:
-      return {...state, test: action.payload};
+
+      return action.payload;
     default:
       return state;
   }
