@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
     case PLAN_UPDATE:
       return { ...state, [action.payload.prop]: action.payload.value};
     case PLAN_CREATE:
-      return INITIAL_STATE;
+    return { ...state, plan_id:  action.payload.id};
     default:
       return state;
   }

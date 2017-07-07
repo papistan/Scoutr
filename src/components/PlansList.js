@@ -18,31 +18,31 @@ class  PlansList extends Component {
     this.props.plansFetch();
 
     this.createDataSource(this.props)
+
+
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps)
   }
   createDataSource({plans}) {
+
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
     this.dataSource = ds.cloneWithRows(plans);
   }
    renderRow(plan) {
-
     return <ListItem plan={plan} />;
   }
 
   render () {
     return (
       <View>
-
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
-          renderRow={this.renderRow} />
-
-
+          renderRow={this.renderRow}
+          />
       </View>
 
     );

@@ -12,7 +12,21 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
-        <Scene key="login" component={LoginForm} title="Please Login" initial />
+        <Scene
+          key="createPlan"
+          component={PlanCreate}
+          title="New Plan"
+          initial
+        />
+
+        <Scene
+        onRight={() => Actions.register()}
+        rightTitle='Register'
+        key="login"
+        component={LoginForm}
+        title="Please Login"
+         />
+        <Scene key="register" component={LoginForm} title="New Account"  />
       </Scene>
 
       <Scene key="main">
@@ -23,6 +37,7 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Plans List"
+
         />
         <Scene
           onRight={() => Actions.createLocale()}
@@ -43,6 +58,7 @@ const RouterComponent = () => {
           key="flipCards"
           component={FlipCards}
           title="FlipCards"
+
         />
         </Scene>
     </Router>
