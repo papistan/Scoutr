@@ -12,12 +12,19 @@ const RouterComponent = () => {
 
       <Scene key="auth">
         <Scene
+          key="createPlan"
+          component={PlanCreate}
+          title="New Plan"
+          initial
+        />
+
+        <Scene
         onRight={() => Actions.register()}
         rightTitle='Register'
         key="login"
         component={LoginForm}
         title="Please Login"
-        initial />
+         />
         <Scene key="register" component={LoginForm} title="New Account"  />
       </Scene>
 
@@ -28,6 +35,7 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Plans List"
+
         />
         <Scene
           key="createPlan"
@@ -41,6 +49,7 @@ const RouterComponent = () => {
           key="flipCards"
           component={FlipCards}
           title="FlipCards"
+
         />
         </Scene>
     </Router>
