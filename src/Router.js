@@ -17,6 +17,7 @@ const RouterComponent = () => {
           title="New Plan"
           initial
         />
+
         <Scene
         onRight={() => Actions.register()}
         rightTitle='Register'
@@ -34,6 +35,7 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Plans List"
+
         />
         <Scene
           key="createPlan"
@@ -47,6 +49,7 @@ const RouterComponent = () => {
           key="flipCards"
           component={FlipCards}
           title="FlipCards"
+
         />
         </Scene>
     </Router>

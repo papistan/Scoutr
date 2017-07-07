@@ -7,6 +7,7 @@ export const LOGIN_USER = 'login_user';
 
 // plans const's
 export const PLANS_FETCH = 'plans_fetch';
+export const PLAN_FETCH = 'plan_fetch';
 
 // plan
 export const PLAN_CREATE = 'plan_create'; // works
