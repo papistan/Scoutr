@@ -31,8 +31,8 @@ class  FlipCards extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const {title, city, district} = state.planForm;
-  return {title, city, district}
+  const {id, title, city, district} = state.planForm.currentPlan;
+  return {id, title, city, district}
 };
 
 export default  connect(mapStateToProps, {planLocalesFetch})(FlipCards);
