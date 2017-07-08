@@ -4,11 +4,15 @@ import  Flip from './common/Flip'
 import { CardSection, Button} from './common';
 import { planFetch } from '../actions';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
+import {planLocalesFetch} from '../actions';
 
 class  FlipCards extends Component {
 
    onButtonPress() {
-      console.log("Plan: ", this.props.plan)
+
+      debugger
+      this.props.plan.planLocalesFetch();
     }
    render(props) {
     return (
@@ -32,4 +36,4 @@ const mapStateToProps = (state) => {
   return {title, city, district}
 };
 
-export default  connect(mapStateToProps, {})(FlipCards);
+export default  connect(mapStateToProps, {planLocalesFetch})(FlipCards);

@@ -12,12 +12,10 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
-
-        <Scene
-          key="planLocalesList"
-          component={PlanLocalesList}
-          title="Plan Locales List"
-          initial
+         <Scene
+          key="createPlan"
+          component={PlanCreate}
+          title="New Plan"
         />
 
         <Scene
@@ -38,7 +36,6 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Plans List"
-          initial
         />
 
         <Scene
@@ -49,6 +46,7 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="plan">
+
         <Scene
           key="flipCards"
           component={FlipCards}
@@ -59,7 +57,7 @@ const RouterComponent = () => {
 
           key="planLocalesList"
           component={PlanLocalesList}
-          title="Plan Locales List"
+          title="Liked Locations"
 
         />
         </Scene>

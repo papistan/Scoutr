@@ -29,7 +29,6 @@ export const plansFetch = () => {
   return (dispatch) => {
   var user_id = 1;
   axios.get(`http://localhost:3000/users/${user_id}`).then((response) => {
-
     dispatch({ type: PLANS_FETCH, payload: response.data});
   });
   };

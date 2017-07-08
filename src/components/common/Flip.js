@@ -27,7 +27,7 @@ export default React.createClass({
   .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
-    var plan_id = 1;
+    var plan_id = this.props.props.id;
     console.log("Plan: ", plan_id);
     axios.post('http://localhost:3000/locales', { params: {
       plan_id: plan_id,
