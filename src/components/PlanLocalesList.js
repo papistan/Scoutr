@@ -8,7 +8,6 @@ import LocaleListItem from './LocaleListItem'
 class  PlanLocalesList extends Component {
 
   componentWillMount() {
-    debugger
     this.props.planLocalesFetch();
 
     this.createDataSource(this.props)
@@ -46,7 +45,6 @@ const mapStateToProps = state => {
   const planLocales = _.map(state.planLocales.locales, (val, uid) => {
     return { ...val, uid };
   });
-  debugger
   return { planLocales, plan};
 };
 export default  connect(mapStateToProps, {planLocalesFetch})(PlanLocalesList);

@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   title: '',
   city: '',
   district: ''
+
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -15,7 +16,7 @@ export default (state = INITIAL_STATE, action) => {
     case PLAN_UPDATE:
       return { ...state, [action.payload.prop]: action.payload.value};
     case PLAN_CREATE:
-    return { ...state, plan_id:  action.payload.id};
+    return { ...state, ...INITIAL_STATE, currentPlan: action.payload};
     default:
       return state;
   }

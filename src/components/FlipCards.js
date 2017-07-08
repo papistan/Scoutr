@@ -10,9 +10,8 @@ import {planLocalesFetch} from '../actions';
 class  FlipCards extends Component {
 
    onButtonPress() {
-
-      debugger
-      this.props.plan.planLocalesFetch();
+    var plan = this.props.plan
+    Actions.planLocalesList();
     }
    render(props) {
     return (

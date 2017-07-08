@@ -5,11 +5,9 @@ import {
 } from './types';
 
 export const planLocalesFetch = () => {
-  return (dispatch) => {
-  debugger
-  var plan_id = 1;
+  return (dispatch, state) => {
+  var plan_id = state().planForm.currentPlan.id;
   axios.get(`http://localhost:3000/plans/${plan_id}`).then((response) => {
-
     dispatch({type: PLAN_LOCALES_FETCH, payload: response.data})
   });
   };
