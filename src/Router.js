@@ -12,11 +12,6 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
-         <Scene
-          key="createPlan"
-          component={PlanCreate}
-          title="New Plan"
-        />
 
         <Scene
         onRight={() => Actions.register()}

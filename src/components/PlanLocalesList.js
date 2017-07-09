@@ -29,7 +29,7 @@ class  PlanLocalesList extends Component {
   render () {
     return (
 
-      <View>
+      <View style={{flex: 1}}>
         <ListView
           enableEmptySections
           dataSource={this.dataSource}
@@ -40,6 +40,7 @@ class  PlanLocalesList extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   const plan = state.planLocales.plan
   const planLocales = _.map(state.planLocales.locales, (val, uid) => {
