@@ -4,18 +4,24 @@ import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
 class ListItem extends Component {
+  onRowPress() {
+    Actions.planLocalesList({ plan: this.props.plan });
+  }
+
 
   render() {
     const { title } = this.props.plan;
 
     return (
-
+      <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+        <View>
           <CardSection>
             <Text style={styles.titleStyle}>
               {title}
             </Text>
           </CardSection>
-
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

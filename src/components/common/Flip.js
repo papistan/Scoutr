@@ -20,9 +20,6 @@ export default React.createClass({
   componentWillMount() {
     var city = this.props.props.city;
     var neighborhood = this.props.props.district;
-    debugger
-    console.log("City: ", city)
-    console.log("neighborhood: ", neighborhood)
     axios.get('http://localhost:3000/locales'
     , { params: {
     city: city, neighborhood: neighborhood
@@ -30,7 +27,6 @@ export default React.createClass({
   .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
-
     var plan_id = this.props.props.id;
     console.log("Plan: ", plan_id);
     axios.post('http://localhost:3000/locales', { params: {

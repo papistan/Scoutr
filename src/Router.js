@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm';
 import FlipCards from './components/FlipCards';
 import PlanCreate from './components/PlanCreate';
 import PlansList from './components/PlansList';
+import PlanLocalesList from './components/PlanLocalesList';
 
 
 const RouterComponent = () => {
@@ -11,12 +12,6 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
 
       <Scene key="auth">
-        <Scene
-          key="createPlan"
-          component={PlanCreate}
-          title="New Plan"
-          initial
-        />
 
         <Scene
         onRight={() => Actions.register()}
@@ -29,14 +24,15 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="main">
-         <Scene
+
+        <Scene
           onRight={() => Actions.createPlan()}
           rightTitle='Create Plan'
           key="plansList"
           component={PlansList}
           title="Plans List"
-
         />
+
         <Scene
           key="createPlan"
           component={PlanCreate}
@@ -45,10 +41,18 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="plan">
+
         <Scene
           key="flipCards"
           component={FlipCards}
           title="FlipCards"
+
+        />
+        <Scene
+
+          key="planLocalesList"
+          component={PlanLocalesList}
+          title="Liked Locations"
 
         />
         </Scene>
