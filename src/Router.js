@@ -38,24 +38,21 @@ const RouterComponent = () => {
           component={PlanCreate}
           title="New Plan"
         />
+        <Scene
+            renderBackButton={()=>(null)}
+            key="flipCards"
+            component={FlipCards}
+            title="FlipCards"
+
+          />
+          <Scene
+            onRight={() => Actions.plansList()}
+            rightTitle='Plan List'
+            key="planLocalesList"
+            component={PlanLocalesList}
+            title="Liked Locations"
+          />
       </Scene>
-
-      <Scene key="plan">
-
-        <Scene
-          key="flipCards"
-          component={FlipCards}
-          title="FlipCards"
-
-        />
-        <Scene
-
-          key="planLocalesList"
-          component={PlanLocalesList}
-          title="Liked Locations"
-
-        />
-        </Scene>
     </Router>
   );
 };

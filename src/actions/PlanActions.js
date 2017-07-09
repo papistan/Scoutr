@@ -18,7 +18,7 @@ export const planCreate = ({ title, city, district}) => {
      axios.post('http://localhost:3000/plans', { params: { user_id: user_id, title: title, city: city, district: district}
     }).then((response) => {
       dispatch({ type: PLAN_CREATE, payload: response.data});
-        Actions.plan({plan: response.data});
+        Actions.flipCards({plan: response.data});
     });
   };
 };
