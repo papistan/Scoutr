@@ -12,22 +12,23 @@ export default React.createClass({
 
   getInitialState() {
     return {
+      loading: true,
       cards: [],
       cardsCount: 0,
       outOfCards: false
     }
   },
   componentWillMount() {
-    var city = this.props.props.city;
-    var neighborhood = this.props.props.district;
+    var city = this.props.plan.city;
+    var neighborhood = this.props.plan.district;
     axios.get('http://localhost:3000/locales'
     , { params: {
     city: city, neighborhood: neighborhood
   }})
-  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
+  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length,  loading: false }));
   },
   handleYup (card) {
-    var plan_id = this.props.props.id;
+    var plan_id = this.props.plan.id;
     console.log("Plan: ", plan_id);
     axios.post('http://localhost:3000/locales', { params: {
       plan_id: plan_id,
