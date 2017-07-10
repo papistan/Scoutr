@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import { Spinner } from './Spinner';
 import axios from 'axios';
 import Card from './Card';
 import NoMoreCards from './NoMoreCards';
@@ -17,6 +18,15 @@ export default React.createClass({
       cardsCount: 0,
       outOfCards: false
     }
+  },
+  renderSpinner(){
+    if (this.state.loading){
+      return <Spinner />;
+    }
+
+    return (
+        <NoMoreCards />
+      );
   },
   componentWillMount() {
     var city = this.props.plan.city;
@@ -56,7 +66,8 @@ export default React.createClass({
         loop={false}
 
         renderCard={(cardData) => <Card {...cardData} />}
-        renderNoMoreCards={() => <NoMoreCards />}
+        renderSpinner={this.renderSpinner}
+        // renderNoMoreCards={() => <NoMoreCards />}
         showYup={true}
         showNope={true}
 
