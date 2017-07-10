@@ -10,7 +10,16 @@ import PlanLocalesList from './components/PlanLocalesList';
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-
+      <Scene key="auth">
+          <Scene
+          onRight={() => Actions.register()}
+          rightTitle='Register'
+          key="login"
+          component={LoginForm}
+          title="Please Login"
+           />
+          <Scene key="register" component={LoginForm} title="New Account"  />
+      </Scene>
 
 
       <Scene key="main">
