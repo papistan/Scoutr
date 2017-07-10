@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { View, Text, TouchableOpacity}  from 'react-native';
+import { View, Text, ListView}  from 'react-native';
+import {Button}  from './common';
 import {planLocalesFetch} from '../actions';
 import LocaleListItem from './LocaleListItem'
 import { SwipeListView } from 'react-native-swipe-list-view';
@@ -26,7 +27,10 @@ class  PlanLocalesList extends Component {
 
     return <LocaleListItem planLocale={planLocale} />;
   }
-  renderHiddenRow() {
+  onPress() {
+      console.log("pressed");
+  }
+  renderHiddenRow(planLocale) {
      return (
       <View style={styles.rowBack}>
               <Text></Text>
@@ -40,6 +44,7 @@ class  PlanLocalesList extends Component {
 
       <View style={{flex: 1}}>
         <SwipeListView
+          disableRightSwipe
           dataSource={this.dataSource}
           renderRow={this.renderRow}
           renderHiddenRow={this.renderHiddenRow}
