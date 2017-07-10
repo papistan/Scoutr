@@ -13,6 +13,7 @@
 		"react-native": "0.45.1",
 		"react-native-router-flux": "^3.41.0",
 		"react-native-swipe-cards": "^0.1.0",
+		"react-native-swipe-list-view": "^0.4.1",
 		"react-redux": "^5.0.5",
 		"redux": "^3.7.1",
 		"redux-thunk": "^2.2.0"
