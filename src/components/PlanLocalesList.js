@@ -8,7 +8,7 @@ import LocaleListItem from './LocaleListItem'
 class  PlanLocalesList extends Component {
 
   componentWillMount() {
-    this.props.planLocalesFetch();
+    this.props.planLocalesFetch(plan = this.props.rowPlan);
 
     this.createDataSource(this.props)
   }

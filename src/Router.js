@@ -10,18 +10,17 @@ import PlanLocalesList from './components/PlanLocalesList';
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-
-      <Scene key="auth">
-
-        <Scene
-        onRight={() => Actions.register()}
-        rightTitle='Register'
-        key="login"
-        component={LoginForm}
-        title="Please Login"
-         />
-        <Scene key="register" component={LoginForm} title="New Account"  />
+       <Scene key="auth">
+          <Scene
+          onRight={() => Actions.register()}
+          rightTitle='Register'
+          key="login"
+          component={LoginForm}
+          title="Please Login"
+           />
+          <Scene key="register" component={LoginForm} title="New Account"  />
       </Scene>
+
 
       <Scene key="main">
 
@@ -38,24 +37,22 @@ const RouterComponent = () => {
           component={PlanCreate}
           title="New Plan"
         />
+        <Scene
+            renderBackButton={()=>(null)}
+            key="flipCards"
+            component={FlipCards}
+            title="FlipCards"
+
+          />
+          <Scene
+            renderBackButton={()=>(null)}
+            onRight={() => Actions.plansList()}
+            rightTitle='Plan List'
+            key="planLocalesList"
+            component={PlanLocalesList}
+            title="Liked Locations"
+          />
       </Scene>
-
-      <Scene key="plan">
-
-        <Scene
-          key="flipCards"
-          component={FlipCards}
-          title="FlipCards"
-
-        />
-        <Scene
-
-          key="planLocalesList"
-          component={PlanLocalesList}
-          title="Liked Locations"
-
-        />
-        </Scene>
     </Router>
   );
 };

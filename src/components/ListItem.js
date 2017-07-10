@@ -5,9 +5,8 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
   onRowPress() {
-    Actions.planLocalesList({ plan: this.props.plan });
+    Actions.planLocalesList({ rowPlan: this.props.plan });
   }
-
 
   render() {
     const { title } = this.props.plan;
