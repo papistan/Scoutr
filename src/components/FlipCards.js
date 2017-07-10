@@ -10,14 +10,13 @@ import {planLocalesFetch} from '../actions';
 class  FlipCards extends Component {
 
    onButtonPress() {
-    var plan = this.props.plan
-    Actions.planLocalesList();
+    Actions.planLocalesList(plan = this.props.plan);
     }
    render(props) {
     return (
       <View style={{flex:1}}>
         <CardSection style={{flex:9}}>
-          <Flip props={this.props.plan} />
+          <Flip plan={this.props.plan} />
         </CardSection>
 
       <CardSection style={{flex:1, paddingBottom: 10}}>
