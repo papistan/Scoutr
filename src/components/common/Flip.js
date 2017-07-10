@@ -13,20 +13,13 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      loading: true,
       cards: [],
       cardsCount: 0,
       outOfCards: false
     }
   },
   renderSpinner(){
-    if (this.state.loading){
       return <Spinner />;
-    }
-
-    return (
-        <NoMoreCards />
-      );
   },
   componentWillMount() {
     var city = this.props.plan.city;
@@ -35,7 +28,7 @@ export default React.createClass({
     , { params: {
     city: city, neighborhood: neighborhood
   }})
-  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length,  loading: false }));
+  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
     var plan_id = this.props.plan.id;
@@ -62,12 +55,12 @@ export default React.createClass({
   render() {
     return (
       <SwipeCards
+  
         cards={this.state.cards}
         loop={false}
 
         renderCard={(cardData) => <Card {...cardData} />}
-        renderSpinner={this.renderSpinner}
-        // renderNoMoreCards={() => <NoMoreCards />}
+        renderNoMoreCards={() => <NoMoreCards />}
         showYup={true}
         showNope={true}
 

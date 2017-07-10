@@ -1,12 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, ActivityIndicator} from 'react-native';
+import Spinner from './Spinner'
 
 
 let NoMoreCards = React.createClass({
   render() {
     return (
       <View style={styles.noMoreCards}>
-        <Text>No more cards</Text>
+        <ActivityIndicator size={'large'} />
       </View>
     )
   }
