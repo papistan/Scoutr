@@ -53,6 +53,7 @@ class  PlanLocalesList extends Component {
       <View style={styles.container}>
         <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/bc/8d/5f/bc8d5f496fbb5cf4f760231b8a5301ff--san-francisco-california-california-usa.jpg'}} style={styles.container}>
         <ListView
+          enableEmptySections={true}
           dataSource={this.dataSource}
           renderRow={this.renderRow}
         />
@@ -66,7 +67,6 @@ class  PlanLocalesList extends Component {
 const styles = {
   container: {
     flex: 1
-    // backgroundColor: 'black'
   }
 };
 

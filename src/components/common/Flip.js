@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { Image, StyleSheet, Text, View} from 'react-native';
 import { Spinner } from './Spinner';
 import axios from 'axios';
 import Card from './Card';
@@ -49,13 +49,12 @@ export default React.createClass({
       console.log(`Adding more cards`);
         axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(response =>  this.setState({ cards: this.state.cards.concat(response.data), cardsCount: (this.state.cardsCount += response.data.length) }));
       };
-
     },
   // },
   render() {
     return (
-      <SwipeCards
-  
+        <SwipeCards
+        
         cards={this.state.cards}
         loop={false}
 
@@ -67,7 +66,7 @@ export default React.createClass({
         handleYup={this.handleYup}
         handleNope={this.handleNope}
         cardRemoved={this.cardRemoved}
-      />
+        />
     )
   }
 })
