@@ -12,9 +12,9 @@ class ListItem extends Component {
     const { title } = this.props.plan;
 
     return (
-      <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
-        <View>
-          <CardSection>
+      <TouchableWithoutFeedback underlayColor = '#008b8b' onPress={this.onRowPress.bind(this)}>
+        <View >
+          <CardSection style={styles.backgroundStyle}>
             <Text style={styles.titleStyle}>
               {title}
             </Text>
@@ -27,8 +27,20 @@ class ListItem extends Component {
 
 const styles = {
   titleStyle: {
-    fontSize: 18,
-    paddingLeft: 15
+    flex: 1,
+    fontSize: 40,
+    fontWeight: 'bold',
+    fontFamily: 'helvetica',
+    paddingLeft: 30,
+    height: 50,
+    margin: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white'
+  },
+  backgroundStyle: {
+    // opacity: 0.2,
+    backgroundColor: 'transparent'
   }
 };
 

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { View, Text, ListView}  from 'react-native';
+import { Image, View, Text, ListView, StyleSheet }  from 'react-native';
 import {plansFetch} from '../actions';
 import ListItem from './ListItem'
 
@@ -37,17 +37,28 @@ class  PlansList extends Component {
 
   render () {
     return (
-      <View>
-        <ListView
+      <View style={styles.container} >
+        <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/4c/5a/35/4c5a3585ebb98a6f10df0ff9d4445e50--tumblr-iphone-wallpaper-city-wallpaper.jpg'}} style={styles.container}>
+          <ListView 
           enableEmptySections
           dataSource={this.dataSource}
           renderRow={this.renderRow}
           />
+        </Image>
       </View>
 
     );
   }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      // backgroundColor: '#349da3',
+      flex: 1,
+      // backgroundColor: '#FFFFFF',
+    }
+});
+
 const mapStateToProps = state => {
   const plans = _.map(state.plans, (val, uid) => {
     return { ...val, uid };
