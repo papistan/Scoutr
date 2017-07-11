@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { View, Text, ListView}  from 'react-native';
+import { Image, View, Text, ListView}  from 'react-native';
 import axios from 'axios';
 import {Button}  from './common';
 import {planLocalesFetch} from '../actions';
@@ -40,7 +40,7 @@ class  PlanLocalesList extends Component {
       <Swipeout right={swipeBtns}
         backgroundColor= 'transparent'>
         
-          <View>
+          <View >
            <LocaleListItem planLocale={planLocale} />
           </View>
       </Swipeout>
@@ -50,16 +50,25 @@ class  PlanLocalesList extends Component {
   render () {
     return (
 
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
+        <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/bc/8d/5f/bc8d5f496fbb5cf4f760231b8a5301ff--san-francisco-california-california-usa.jpg'}} style={styles.container}>
         <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow}
-      />
+        />
+      </Image>
       </View>
 
     );
   }
 }
+
+const styles = {
+  container: {
+    flex: 1
+    // backgroundColor: 'black'
+  }
+};
 
 const mapStateToProps = state => {
   const plan = state.planLocales.plan

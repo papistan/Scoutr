@@ -39,8 +39,9 @@ const styles = {
     color: 'white'
   },
   backgroundStyle: {
-    // opacity: 0.2,
-    backgroundColor: 'transparent'
+    opacity: 0.9,
+    backgroundColor: 'transparent',
+    borderBottomWidth: 1,
   }
 };
 

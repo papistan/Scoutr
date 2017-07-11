@@ -53,9 +53,7 @@ class  PlansList extends Component {
 
 const styles = StyleSheet.create({
     container: {
-      // backgroundColor: '#349da3',
       flex: 1,
-      // backgroundColor: '#FFFFFF',
     }
 });
 
