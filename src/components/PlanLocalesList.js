@@ -2,10 +2,11 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import { View, Text, ListView}  from 'react-native';
+import axios from 'axios';
 import {Button}  from './common';
 import {planLocalesFetch} from '../actions';
-import LocaleListItem from './LocaleListItem'
-import { SwipeListView } from 'react-native-swipe-list-view';
+import LocaleListItem from './LocaleListItem';
+import Swipeout from 'react-native-swipeout';
 
 class  PlanLocalesList extends Component {
 
@@ -24,49 +25,41 @@ class  PlanLocalesList extends Component {
     this.dataSource = ds.cloneWithRows(planLocales);
   }
    renderRow(planLocale) {
-
-    return <LocaleListItem planLocale={planLocale} />;
-  }
-  onPress() {
-      console.log("pressed");
-  }
-  renderHiddenRow(planLocale) {
-     return (
-      <View style={styles.rowBack}>
-              <Text></Text>
-              <Text>Delete</Text>
-      </View>
-     );
+    let swipeBtns = [{
+      text: 'Delete',
+      fontWeight: 'bold',
+      backgroundColor: 'red',
+      onPress: () => { 
+       axios.delete('http://localhost:3000/locales/`${planLocale.id}', { params: {
+      locale_id: planLocale.id
+      }
+    })
+    }
+    }];
+    return (
+      <Swipeout right={swipeBtns}
+        backgroundColor= 'transparent'>
+        
+          <View>
+           <LocaleListItem planLocale={planLocale} />
+          </View>
+      </Swipeout>
+    )
   }
 
   render () {
     return (
 
       <View style={{flex: 1}}>
-        <SwipeListView
-          disableRightSwipe
+        <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow}
-          renderHiddenRow={this.renderHiddenRow}
-          rightOpenValue={-75}
       />
       </View>
 
     );
   }
 }
-const styles = {
-  rowBack: {
-    alignItems: 'center',
-    backgroundColor: '#F00',
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingLeft: 15,
-    paddingRight: 15,
-  }
-
-};
 
 const mapStateToProps = state => {
   const plan = state.planLocales.plan
