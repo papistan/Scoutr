@@ -5,6 +5,7 @@ import { planUpdate, planCreate } from '../actions';
 import { CardSection, Input, Button} from './common';
 
 
+
 class PlanCreate extends Component {
  onButtonPress() {
      const {title, city, district} = this.props;
@@ -19,6 +20,7 @@ class PlanCreate extends Component {
             lable="Title"
             placeholder="New Plan"
             autoCorrect={false}
+            minLength = {3}
             value={this.props.title}
             onChangeText={value => this.props.planUpdate({prop: 'title', value})}
           />
@@ -28,6 +30,7 @@ class PlanCreate extends Component {
             lable="City"
             placeholder="Oakland"
             autoCorrect={true}
+            minLength = {3}
             value={this.props.city}
             onChangeText={value => this.props.planUpdate({prop: 'city', value})}
           />
@@ -37,6 +40,7 @@ class PlanCreate extends Component {
             lable="District"
             placeholder="Chinatown"
             autoCorrect={true}
+            minLength = {3}
             value={this.props.district}
             onChangeText={value => this.props.planUpdate({prop: 'district', value})}
           />

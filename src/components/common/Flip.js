@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import { Spinner } from './Spinner';
 import axios from 'axios';
 import Card from './Card';
 import NoMoreCards from './NoMoreCards';
@@ -12,11 +13,13 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      loading: true,
       cards: [],
       cardsCount: 0,
       outOfCards: false
     }
+  },
+  renderSpinner(){
+      return <Spinner />;
   },
   componentWillMount() {
     var city = this.props.plan.city;
@@ -25,7 +28,7 @@ export default React.createClass({
     , { params: {
     city: city, neighborhood: neighborhood
   }})
-  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length,  loading: false }));
+  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
   handleYup (card) {
     var plan_id = this.props.plan.id;
@@ -52,6 +55,7 @@ export default React.createClass({
   render() {
     return (
       <SwipeCards
+  
         cards={this.state.cards}
         loop={false}
 
