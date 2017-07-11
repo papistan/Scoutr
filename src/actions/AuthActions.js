@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import axios from 'axios';
 import {Actions} from 'react-native-router-flux';
 import { EMAIL_CHANGED,
          PASSWORD_CHANGED,
@@ -26,7 +27,14 @@ export const loginUser = ({email, password}) => {
     .then(user => loginUserSuccess(dispatch, user))
     .catch(() => {
       firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(user => loginUserSuccess(dispatch, user))
+      .then((user) => {
+        axios.post(`http://localhost:3000/users/rn_create`,
+        { params: { email: email, password: password, password_confirmation: password, firebase_uid: user.uid } }).then((response) => {
+            user.ruby_id = response.data.user.id;
+            console.log( user.ruby_id)
+            loginUserSuccess(dispatch, user);
+        })
+      })
       .catch(() => loginUserFail(dispatch));
     });
   };
