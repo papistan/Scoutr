@@ -24,7 +24,14 @@ export const loginUser = ({email, password}) => {
   return(dispatch) => {
     dispatch({type: LOGIN_USER});
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(user => loginUserSuccess(dispatch, user))
+    .then(user => {
+      axios.get(`http://localhost:3000/users/find_by_firebase/${user.uid}`)
+      .then((response) => {
+        console.log(response);
+        user.ruby_id = response.data.id;
+        loginUserSuccess(dispatch, user)
+      })
+    })
     .catch(() => {
       firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
