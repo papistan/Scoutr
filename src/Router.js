@@ -35,7 +35,7 @@ const RouterComponent = () => {
         <Scene
           key="createPlan"
           component={PlanCreate}
-          title="Make a list"
+          title="Make a List"
         />
         <Scene
             renderBackButton={()=>(null)}

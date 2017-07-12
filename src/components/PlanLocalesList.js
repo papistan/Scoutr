@@ -15,19 +15,19 @@ class  PlanLocalesList extends Component {
   componentWillMount() {
     this.props.planLocalesFetch(plan = this.props.rowPlan);
     this.createDataSource(this.props);
-    debugger
+   
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps)
   }
   createDataSource({planLocales}) {
+    
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
     this.dataSource = ds.cloneWithRows(planLocales);
   }
    renderRow(planLocale) {
-
     let swipeBtns = [{
       text: 'Delete',
       fontWeight: 'bold',
@@ -54,18 +54,24 @@ class  PlanLocalesList extends Component {
       </Swipeout>
     )
   }
-  onTextPress () {
+  textIt(phoneNumber) {
 
-    AlertIOS.prompt(
+   const { plan } = this.props;
+     var localez = ""
+    this.props.planLocales.forEach(function(locale){
+        localez += (locale.name + "\n" + locale.url + "\n")
+    });
+
+    Communications.text(phoneNumber, `Check out these spots in ${plan.district}: ${localez}`)
+  }
+  onTextPress () {
+  
+  AlertIOS.prompt(
       'Enter phone #',
       null,
-      text => console.log("You entered "+text)
+      text => this.textIt(text)
     );
-    // const { plan } = this.props;
-
-    // Communications.text( , 'Check these out ${plan}')
   }
-
   render () {
     return (
 
