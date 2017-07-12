@@ -59,7 +59,7 @@ class  PlanLocalesList extends Component {
    const { plan } = this.props;
      var localez = ""
     this.props.planLocales.forEach(function(locale){
-        localez += (locale.name + "\n" + locale.url + "\n")
+        localez += (locale.name + "\n" + locale.address + "\n")
     });
 
     Communications.text(phoneNumber, `Check out these spots in ${plan.district}: ${localez}`)
