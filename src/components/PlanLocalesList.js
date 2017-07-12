@@ -24,9 +24,6 @@ class  PlanLocalesList extends Component {
     })
     this.dataSource = ds.cloneWithRows(planLocales);
   }
-  forceFetch(plan) {
-    this.props.planLocalesFetch(plan);
-  }
    renderRow(planLocale) {
 
     let swipeBtns = [{
