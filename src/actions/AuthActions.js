@@ -25,7 +25,7 @@ export const loginUser = ({email, password}) => {
     dispatch({type: LOGIN_USER});
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(user => {
-      axios.get(`http://localhost:3000/users/find_by_firebase/${user.uid}`)
+      axios.get(`https://localites.herokuapp.com/users/find_by_firebase/${user.uid}`)
       .then((response) => {
         console.log(response);
         user.ruby_id = response.data.id;
@@ -35,7 +35,7 @@ export const loginUser = ({email, password}) => {
     .catch(() => {
       firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        axios.post(`http://localhost:3000/users/rn_create`,
+        axios.post(`https://localites.herokuapp.com/users/rn_create`,
         { params: { email: email, password: password, password_confirmation: password, firebase_uid: user.uid } }).then((response) => {
             user.ruby_id = response.data.user.id;
             console.log( user.ruby_id)

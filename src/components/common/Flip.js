@@ -24,7 +24,7 @@ export default React.createClass({
   componentWillMount() {
     var city = this.props.plan.city;
     var neighborhood = this.props.plan.district;
-    axios.get('http://localhost:3000/locales'
+    axios.get('https://localites.herokuapp.com/locales'
     , { params: {
     city: city, neighborhood: neighborhood
   }})
@@ -33,7 +33,7 @@ export default React.createClass({
   handleYup (card) {
     var plan_id = this.props.plan.id;
     console.log("Plan: ", plan_id);
-    axios.post('http://localhost:3000/locales', { params: {
+    axios.post('https://localites.herokuapp.com/locales', { params: {
       plan_id: plan_id,
       card: card
       }
@@ -54,7 +54,7 @@ export default React.createClass({
   render() {
     return (
         <SwipeCards
-        
+
         cards={this.state.cards}
         loop={false}
 
