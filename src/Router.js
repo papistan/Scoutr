@@ -29,28 +29,28 @@ const RouterComponent = () => {
           rightTitle='Create Plan'
           key="plansList"
           component={PlansList}
-          title="Plans List"
+          title="Scouted Lists"
         />
 
         <Scene
           key="createPlan"
           component={PlanCreate}
-          title="New Plan"
+          title="Make a list"
         />
         <Scene
             renderBackButton={()=>(null)}
             key="flipCards"
             component={FlipCards}
-            title="FlipCards"
+            title="Scoutr"
 
           />
           <Scene
             renderBackButton={()=>(null)}
             onRight={() => Actions.plansList()}
-            rightTitle='Plan List'
+            rightTitle='Lists'
             key="planLocalesList"
             component={PlanLocalesList}
-            title="Liked Locations"
+            title="Scouted Spots"
           /> 
 
           
