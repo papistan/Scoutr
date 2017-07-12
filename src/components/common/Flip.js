@@ -26,7 +26,11 @@ export default React.createClass({
     var category = this.props.category;
     axios.get('https://localites.herokuapp.com/locales', { params: {
     city: city, neighborhood: neighborhood, category: category }})
-  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
+    .then((response) => {
+      this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
+      console.log(this.state.cards);
+    });
+
   },
   componentWillReceiveProps(nextProps){
     console.log("Flip Next Props: ", nextProps.category);
@@ -35,11 +39,12 @@ export default React.createClass({
       console.log("True")
       var city = this.props.plan.city;
       var neighborhood = this.props.plan.district;
-      var category = this.props.category;
+      var category = nextProps.category;
       axios.get('https://localites.herokuapp.com/locales', { params: {
       city: city, neighborhood: neighborhood, category: category }})
     .then((response) => {
       this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
+      console.log(this.state.cards);
       });
     } else {
       console.log("false")
