@@ -14,14 +14,14 @@ class  FlipCards extends Component {
     }
    render(props) {
     return (
-      <View style={{flex:1}}>
+      <View style={{flex:1, backgroundColor: 'lightblue'}}>
         <CardSection style={{flex:9}}>
           <Flip plan={this.props.plan} />
         </CardSection>
 
       <CardSection style={{flex:1, paddingBottom: 10}}>
          <Button onPress={this.onButtonPress.bind(this)}>
-            Done!
+            DONE
           </Button>
       </CardSection>
       </View>
