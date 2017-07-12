@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text, View }  from 'react-native';
+import { Image, Text, View }  from 'react-native';
 import {connect} from 'react-redux';
 import {emailChanged, passwordChange, loginUser} from '../actions';
 import {Card, CardSection, Button, Input, Spinner} from './common';
@@ -29,8 +29,11 @@ class  LoginForm extends Component {
 
   render () {
     return (
-      <View>
-        <CardSection>
+      <View style={{flex: 1}}>
+      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
+      <View style={{flex: 1}}>
+        
+        <CardSection >
           <Input
             label="Email"
             placeholder="Test@test.com"
@@ -55,6 +58,8 @@ class  LoginForm extends Component {
           {this.renderButton()}
         </CardSection>
       </View>
+      </Image>
+    </View>
     );
   }
 }
@@ -62,7 +67,8 @@ const styles = {
   errorTextStyle: {
     fontSize: 20,
     alignSelf: 'center',
-    color: 'red'
+    color: 'red',
+    backgroundColor: 'transparent'
   }
 };
 
