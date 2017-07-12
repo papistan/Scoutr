@@ -8,12 +8,15 @@ import { Actions } from 'react-native-router-flux';
 import {planLocalesFetch, planUpdate} from '../actions';
 
 class  FlipCards extends Component {
-    state = {category: ''}
+  state = {category: ""}
+
    onButtonPress() {
     Actions.planLocalesList(plan = this.props.plan);
     }
     onCategorySubmit() {
-      this.setState({category: this.props.category});
+      this.props.plan.category = this.props.category;
+      this.setState({category:  this.props.plan.category});
+      this.forceUpdate();
     }
    render(props) {
 
@@ -38,7 +41,7 @@ class  FlipCards extends Component {
         </CardSection>
         <CardSection style={{flex:9}}>
           <Flip plan={this.props.plan}
-          category={this.props.category} />
+          category={this.state.category} />
         </CardSection>
 
       <CardSection style={{flex:1, paddingBottom: 10}}>

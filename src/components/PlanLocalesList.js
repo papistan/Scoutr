@@ -31,7 +31,7 @@ class  PlanLocalesList extends Component {
       fontWeight: 'bold',
       backgroundColor: 'red',
       onPress: () => {
-      axios.delete(`http://localhost:3000/locales/${planLocale.id}`, { params: {
+      axios.delete(`https://localites.herokuapp.com/locales/${planLocale.id}`, { params: {
       locale_id: planLocale.id }}).then(() => {
         this.props.planLocalesFetch();
       })
