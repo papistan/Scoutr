@@ -24,9 +24,10 @@ export default React.createClass({
   componentWillMount() {
     var city = this.props.plan.city;
     var neighborhood = this.props.plan.district;
+    var category = this.props.category;
     axios.get('http://localhost:3000/locales'
     , { params: {
-    city: city, neighborhood: neighborhood
+    city: city, neighborhood: neighborhood, category: category
   }})
   .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
   },
@@ -54,7 +55,7 @@ export default React.createClass({
   render() {
     return (
         <SwipeCards
-        
+
         cards={this.state.cards}
         loop={false}
 

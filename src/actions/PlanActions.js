@@ -7,6 +7,7 @@ import {
 } from './types';
 
 export const planUpdate = ({prop, value}) => {
+  console.log(prop, value);
   return {
     type: PLAN_UPDATE,
     payload: {prop, value}

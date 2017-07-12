@@ -6,8 +6,8 @@ import {
 const INITIAL_STATE = {
   title: '',
   city: '',
-  district: ''
-
+  district: '',
+  category: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
