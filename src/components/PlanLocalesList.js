@@ -1,19 +1,21 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { Image, View, Text, ListView}  from 'react-native';
+import { AlertIOS, Image, View, Text, ListView}  from 'react-native';
 import axios from 'axios';
-import {Button}  from './common';
+import { Button, CardSection }  from './common';
 import { Actions } from 'react-native-router-flux';
 import {planLocalesFetch, localeDelete} from '../actions';
 import LocaleListItem from './LocaleListItem';
 import Swipeout from 'react-native-swipeout';
+import Communications from 'react-native-communications'
 
 class  PlanLocalesList extends Component {
 
   componentWillMount() {
     this.props.planLocalesFetch(plan = this.props.rowPlan);
-    this.createDataSource(this.props)
+    this.createDataSource(this.props);
+    debugger
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps)
@@ -52,6 +54,17 @@ class  PlanLocalesList extends Component {
       </Swipeout>
     )
   }
+  onTextPress () {
+
+    AlertIOS.prompt(
+      'Enter phone #',
+      null,
+      text => console.log("You entered "+text)
+    );
+    // const { plan } = this.props;
+
+    // Communications.text( , 'Check these out ${plan}')
+  }
 
   render () {
     return (
@@ -64,6 +77,15 @@ class  PlanLocalesList extends Component {
           dataSource={this.dataSource}
           renderRow={this.renderRow.bind(this)}
         />
+
+        <CardSection>
+          <View style={styles.buttonStyle}>
+          </View>
+          <Button onPress={this.onTextPress.bind(this)}>
+            Text List
+          </Button>
+        </CardSection>
+
         </Image>
       </View>
 
@@ -74,6 +96,9 @@ class  PlanLocalesList extends Component {
 const styles = {
   container: {
     flex: 1
+  },
+  buttonStyle: {
+    flex: 2
   }
 };
 
