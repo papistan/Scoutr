@@ -47,7 +47,9 @@ class PlanCreate extends Component {
         </CardSection>
 
         <CardSection>
-          <Button onPress={this.onButtonPress.bind(this)}>
+          <Button 
+          style={{flex:9}} 
+          onPress={this.onButtonPress.bind(this)}>
             Create Plan
           </Button>
         </CardSection>
