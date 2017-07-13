@@ -21,7 +21,7 @@ class  LoginForm extends Component {
       return <Spinner size="large" />;
     }
     return (
-       <Button onPress={this.onButtonPress.bind(this)} >
+       <Button style={styles.loginButton} onPress={this.onButtonPress.bind(this)} >
            Login
        </Button>
     );
@@ -31,9 +31,16 @@ class  LoginForm extends Component {
     return (
       <View style={{flex: 1}}>
       <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
-      <View style={{flex: 1}}>
-        
+       
+       <View >
         <CardSection >
+          <Text style={styles.logo}>
+          scoutr
+          </Text>
+        </CardSection>
+      </View>
+      <View >
+        <CardSection>
           <Input
             label="Email"
             placeholder="Test@test.com"
@@ -69,7 +76,33 @@ const styles = {
     alignSelf: 'center',
     color: 'red',
     backgroundColor: 'transparent'
+  },
+  loginButton: {
+    flex: 4,
+
+  },
+   loginForm: {
+    flex: 5
+  },
+  logo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white',
+    fontFamily: 'Helvetica',
+    fontSize: 70,
+    fontWeight: 'bold',
+    marginLeft: 60,
+    // marginLeft: 120,
+    marginTop: 150
   }
+  // logoContainerStyle: {
+  //   flex: 1,
+  //   backgroundColor: 'transparent',
+  //   borderRadius: 70,
+  //   borderWidth: 3,
+  //   borderColor: 'white',
+ 
 };
 
 const mapStateToProps = ({auth}) => { // comes from index reducer

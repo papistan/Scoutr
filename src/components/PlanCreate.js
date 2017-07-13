@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Picker, Text, View } from 'react-native';
+import { Image, Picker, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { planUpdate, planCreate } from '../actions';
 import { CardSection, Input, Button} from './common';
@@ -14,7 +14,11 @@ class PlanCreate extends Component {
  }
   render () {
     return (
-      <View>
+      <View style={{flex: 1}}>
+      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
+      <View style={{flex: 2}}>
+      </View>
+      <View style={{flex: 2}}>
         <CardSection>
           <Input
             label="Title"
@@ -54,6 +58,8 @@ class PlanCreate extends Component {
           </Button>
         </CardSection>
       </View>
+      </Image>
+    </View>
     );
   }
 }
