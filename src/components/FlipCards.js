@@ -27,7 +27,7 @@ class  FlipCards extends Component {
         <CardSection style={{flex:1, paddingTop: 5}}>
           <View style={{flex: 1, flexDirection: 'row'}}>
             <Input
-            style={{flex: 9}}
+            style={{flex: 9, color: 'black' }}
             label="Type:"
             placeholder="eg. bar, gym or park..."
             onChangeText={value => this.props.planUpdate({prop: 'category', value})}
