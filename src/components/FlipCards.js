@@ -23,7 +23,7 @@ class  FlipCards extends Component {
     return (
       <View style={{flex: 1}}>
       <Image 
-      source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/b7/cb/71/b7cb7135bb30fa29778c5d4dff33fae6.jpg'}} 
+      source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} 
       style={{flex: 1}}
       blurRadius={12}
       >
