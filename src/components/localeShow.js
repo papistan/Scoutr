@@ -19,20 +19,29 @@ class  localeShow extends Component {
       <View>
       <Text style={{ fontSize: 20 }}>
         {this.state.location.name}
+        {"\n"}
       </Text>
       <Text style={{ fontSize: 20 }}>
         {this.state.location.location.display_address[0]}
+        {"\n"}
         {this.state.location.location.display_address[1]}
+        {"\n"}
         {this.state.location.display_phone}
+        {"\n"}
       </Text>
       <Text style={{ fontSize: 20 }}>
         {this.state.location.photos[1]}
+        {"\n"}
         {this.state.location.photos[2]}
+        {"\n"}
       </Text>
       <Text style={{ fontSize: 20 }}>
         {this.state.location.price}
+        {"\n"}
         {this.state.location.rating}
+        {"\n"}
         {this.state.location.review_count}
+        {"\n"}
       </Text>
       <Text style={{ fontSize: 20 }}>
         {this.state.location.url}
