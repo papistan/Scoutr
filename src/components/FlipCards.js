@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button}  from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
 import  Flip from './common/Flip'
 import { CardSection, Input} from './common';
 import { planFetch } from '../actions';
@@ -36,10 +36,7 @@ class  FlipCards extends Component {
               color="#000"
               style={{flex: 1}}
               onPress={this.onCategorySubmit.bind(this)}
-            >
-              X
-              {/* &#10003; */}
-             </Button>
+            />
           </View>
         </CardSection>
         <CardSection style={{flex:9}}>
@@ -48,22 +45,18 @@ class  FlipCards extends Component {
         </CardSection>
 
       <CardSection style={{flex:1, paddingBottom: 10}}>
-         <Button
-           title="DONE"
-           style={styles.buttonStyle}
-           onPress={this.onButtonPress.bind(this)}
-           >
-             <Text style={styles.textStyle}>
-               DONE
-             </Text>
-           </Button>
+        <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={styles.buttonStyle}>
+          <Text style={styles.textStyle}>
+            DONE
+          </Text>
+        </TouchableOpacity>
       </CardSection>
       </View>
 
     );
   }
 }
-// The done button doesn't seem to care about these styles
+
 const styles = {
   textStyle: {
     alignSelf: 'center',
@@ -77,14 +70,13 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: 'transparent',
-    borderRadius: 1,
+    borderRadius: 5,
     borderWidth: 0.3,
     borderColor: 'black',
     marginLeft: 3,
     marginRight: 3
   }
 };
-
 
 const mapStateToProps = (state) => {
   const {id, title, city, district} = state.planForm.currentPlan;
