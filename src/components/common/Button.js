@@ -19,8 +19,8 @@ const styles = {
     color: 'white',
     fontSize: 30,
     fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 5,
+    paddingBottom: 5
   },
   buttonStyle: {
     flex: 1,
