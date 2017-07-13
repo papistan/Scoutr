@@ -28,7 +28,6 @@ export default React.createClass({
     city: city, neighborhood: neighborhood, category: category }})
     .then((response) => {
       this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
-      console.log(this.state.cards);
     });
 
   },
@@ -36,7 +35,6 @@ export default React.createClass({
     console.log("Flip Next Props: ", nextProps.category);
     console.log("flip category ", this.props.category);
     if (this.props.category !== nextProps.category) {
-      console.log("True")
       var city = this.props.plan.city;
       var neighborhood = this.props.plan.district;
       var category = nextProps.category;
@@ -46,8 +44,6 @@ export default React.createClass({
       this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
       console.log(this.state.cards);
       });
-    } else {
-      console.log("false")
     }
 
   },

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet}  from 'react-native';
+import { View, Text, StyleSheet, Button}  from 'react-native';
 import  Flip from './common/Flip'
-import { CardSection, Button, Input} from './common';
+import { CardSection, Input} from './common';
 import { planFetch } from '../actions';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
@@ -23,19 +23,22 @@ class  FlipCards extends Component {
     return (
       <View style={{flex:1, backgroundColor: 'lightblue'}}>
         <CardSection style={{flex:1, paddingTop: 5}}>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, flexDirection: 'row'}}>
             <Input
             style={{flex: 9}}
-            label="Category"
-            placeholder="bar or gym or park ..."
+            label="Type:"
+            placeholder="eg. bar, gym or park..."
             onChangeText={value => this.props.planUpdate({prop: 'category', value})}
             value={this.props.category}
             />
             <Button
-            style={{flex: 1}}
-            onPress={this.onCategorySubmit.bind(this)}
+              title="GO"
+              color="#000"
+              style={{flex: 1}}
+              onPress={this.onCategorySubmit.bind(this)}
             >
-              &#10003;
+              X
+              {/* &#10003; */}
              </Button>
           </View>
         </CardSection>
@@ -45,15 +48,44 @@ class  FlipCards extends Component {
         </CardSection>
 
       <CardSection style={{flex:1, paddingBottom: 10}}>
-         <Button onPress={this.onButtonPress.bind(this)}>
-            DONE
-          </Button>
+         <Button
+           title="DONE"
+           style={styles.buttonStyle}
+           onPress={this.onButtonPress.bind(this)}
+           >
+             <Text style={styles.textStyle}>
+               DONE
+             </Text>
+           </Button>
       </CardSection>
       </View>
 
     );
   }
 }
+// The done button doesn't seem to care about these styles
+const styles = {
+  textStyle: {
+    alignSelf: 'center',
+    color: 'black',
+    fontSize: 30,
+    fontWeight: '600',
+    paddingTop: 5,
+    paddingBottom: 5
+  },
+  buttonStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent',
+    borderRadius: 1,
+    borderWidth: 0.3,
+    borderColor: 'black',
+    marginLeft: 3,
+    marginRight: 3
+  }
+};
+
+
 const mapStateToProps = (state) => {
   const {id, title, city, district} = state.planForm.currentPlan;
   const {category} = state.planForm;
