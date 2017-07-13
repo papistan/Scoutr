@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
+import { Image, View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
 import  Flip from './common/Flip'
 import { CardSection, Input} from './common';
 import { planFetch } from '../actions';
@@ -21,7 +21,9 @@ class  FlipCards extends Component {
    render(props) {
 
     return (
-      <View style={{flex:1, backgroundColor: 'lightblue'}}>
+      <View style={{flex: 1}}>
+      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/b7/cb/71/b7cb7135bb30fa29778c5d4dff33fae6.jpg'}} style={{flex: 1}}>
+      <View style={{flex:1}}>
         <CardSection style={{flex:1, paddingTop: 5}}>
           <View style={{flex: 1, flexDirection: 'row'}}>
             <Input
@@ -31,12 +33,14 @@ class  FlipCards extends Component {
             onChangeText={value => this.props.planUpdate({prop: 'category', value})}
             value={this.props.category}
             />
+            <View >
             <Button
               title="GO"
               color="#000"
-              style={{flex: 1}}
+              style={styles.goButtonStyle}
               onPress={this.onCategorySubmit.bind(this)}
             />
+            </View>
           </View>
         </CardSection>
         <CardSection style={{flex:9}}>
@@ -52,7 +56,8 @@ class  FlipCards extends Component {
         </TouchableOpacity>
       </CardSection>
       </View>
-
+      </Image>
+    </View>
     );
   }
 }
@@ -60,7 +65,7 @@ class  FlipCards extends Component {
 const styles = {
   textStyle: {
     alignSelf: 'center',
-    color: 'black',
+    color: 'white',
     fontSize: 30,
     fontWeight: '600',
     paddingTop: 5,
@@ -70,11 +75,18 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: 'transparent',
-    borderRadius: 5,
-    borderWidth: 0.3,
-    borderColor: 'black',
-    marginLeft: 3,
-    marginRight: 3
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: 'white',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  goButtonStyle: {
+    flex: 1,
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: 'white',
+    color: 'white'
   }
 };
 

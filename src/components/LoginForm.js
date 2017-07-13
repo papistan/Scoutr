@@ -102,7 +102,6 @@ const styles = {
   //   borderRadius: 70,
   //   borderWidth: 3,
   //   borderColor: 'white',
- 
 };
 
 const mapStateToProps = ({auth}) => { // comes from index reducer
