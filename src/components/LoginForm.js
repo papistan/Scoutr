@@ -21,7 +21,7 @@ class  LoginForm extends Component {
       return <Spinner size="large" />;
     }
     return (
-       <Button onPress={this.onButtonPress.bind(this)} >
+       <Button style={styles.loginButton} onPress={this.onButtonPress.bind(this)} >
            Login
        </Button>
     );
@@ -31,9 +31,18 @@ class  LoginForm extends Component {
     return (
       <View style={{flex: 1}}>
       <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
-      <View style={{flex: 1}}>
-        
+       
+       <View >
         <CardSection >
+          <Text>
+          </Text>
+          <Text style={styles.logo}>
+          Scoutr
+          </Text>
+        </CardSection>
+      </View>
+      <View >
+        <CardSection>
           <Input
             label="Email"
             placeholder="Test@test.com"
@@ -69,6 +78,25 @@ const styles = {
     alignSelf: 'center',
     color: 'red',
     backgroundColor: 'transparent'
+  },
+  loginButton: {
+    flex: 4
+  },
+   loginForm: {
+    // flex: 5,
+    color: 'white'
+  },
+  logo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white',
+    fontFamily: 'Helvetica',
+    fontSize: 90,
+    fontWeight: 'bold',
+    marginLeft: 30,
+    // marginLeft: 120,
+    marginTop: 150
   }
 };
 
