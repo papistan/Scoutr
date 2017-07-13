@@ -17,7 +17,7 @@ class PlanCreate extends Component {
       <View>
         <CardSection>
           <Input
-            lable="Title"
+            label="Title"
             placeholder="New Plan"
             autoCorrect={false}
             minLength = {3}
@@ -27,8 +27,8 @@ class PlanCreate extends Component {
         </CardSection>
         <CardSection>
           <Input
-            lable="City"
-            placeholder="Oakland"
+            label="City"
+            placeholder="eg. San Francisco"
             autoCorrect={true}
             minLength = {3}
             value={this.props.city}
@@ -37,8 +37,8 @@ class PlanCreate extends Component {
         </CardSection>
          <CardSection>
           <Input
-            lable="District"
-            placeholder="Chinatown"
+            label="Area"
+            placeholder="eg. SOMA"
             autoCorrect={true}
             minLength = {3}
             value={this.props.district}
@@ -47,8 +47,8 @@ class PlanCreate extends Component {
         </CardSection>
 
         <CardSection>
-          <Button 
-          style={{flex:9}} 
+          <Button
+          style={{flex:9}}
           onPress={this.onButtonPress.bind(this)}>
             Create Plan
           </Button>

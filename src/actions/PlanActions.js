@@ -7,6 +7,7 @@ import {
 } from './types';
 
 export const planUpdate = ({prop, value}) => {
+  console.log(prop, value);
   return {
     type: PLAN_UPDATE,
     payload: {prop, value}
@@ -17,6 +18,7 @@ export const planCreate = ({ title, city, district}) => {
     var user_id = state().auth.user.ruby_id;
      axios.post('https://localites.herokuapp.com/plans', { params: { user_id: user_id, title: title, city: city, district: district}
     }).then((response) => {
+      response.data.category = ""
       dispatch({ type: PLAN_CREATE, payload: response.data});
         Actions.flipCards({plan: response.data});
     });

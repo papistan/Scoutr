@@ -10,7 +10,7 @@ import PlanLocalesList from './components/PlanLocalesList';
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-     
+
     <Scene key="auth">
           <Scene
               onRight={() => Actions.register()}
@@ -20,7 +20,7 @@ const RouterComponent = () => {
               title="Please Login"
                />
               <Scene key="register" component={LoginForm} title="New Account"  />
-          </Scene>
+    </Scene>
 
       <Scene key="main">
 
@@ -54,7 +54,7 @@ const RouterComponent = () => {
           /> 
 
           
-      </Scene> 
+      </Scene>
     </Router>
   );
 };

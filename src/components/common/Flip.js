@@ -10,12 +10,11 @@ import SwipeCards from 'react-native-swipe-cards';
 
 
 export default React.createClass({
-
   getInitialState() {
     return {
       cards: [],
       cardsCount: 0,
-      outOfCards: false
+      outOfCards: false,
     }
   },
   renderSpinner(){
@@ -24,15 +23,32 @@ export default React.createClass({
   componentWillMount() {
     var city = this.props.plan.city;
     var neighborhood = this.props.plan.district;
-    axios.get('https://localites.herokuapp.com/locales'
-    , { params: {
-    city: city, neighborhood: neighborhood
-  }})
-  .then(response => this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length }));
+    var category = this.props.category;
+    axios.get('https://localites.herokuapp.com/locales', { params: {
+    city: city, neighborhood: neighborhood, category: category }})
+    .then((response) => {
+      this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
+    });
+
+  },
+  componentWillReceiveProps(nextProps){
+    console.log("Flip Next Props: ", nextProps.category);
+    console.log("flip category ", this.props.category);
+    if (this.props.category !== nextProps.category) {
+      var city = this.props.plan.city;
+      var neighborhood = this.props.plan.district;
+      var category = nextProps.category;
+      axios.get('https://localites.herokuapp.com/locales', { params: {
+      city: city, neighborhood: neighborhood, category: category }})
+    .then((response) => {
+      this.setState({ cards: response.data["businesses"], cardsCount: response.data["businesses"].length })
+      console.log(this.state.cards);
+      });
+    }
+
   },
   handleYup (card) {
     var plan_id = this.props.plan.id;
-    console.log("Plan: ", plan_id);
     axios.post('https://localites.herokuapp.com/locales', { params: {
       plan_id: plan_id,
       card: card
@@ -46,8 +62,7 @@ export default React.createClass({
     console.log(`The index is ${index}`);
 
     if (this.state.cardsCount - index <= 1 ) {
-      console.log(`Adding more cards`);
-        axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(response =>  this.setState({ cards: this.state.cards.concat(response.data), cardsCount: (this.state.cardsCount += response.data.length) }));
+       // for more than 50 results axios call here
       };
     },
   // },
