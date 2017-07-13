@@ -31,12 +31,14 @@ class  FlipCards extends Component {
             onChangeText={value => this.props.planUpdate({prop: 'category', value})}
             value={this.props.category}
             />
+            <View >
             <Button
               title="GO"
               color="#000"
               style={{flex: 1}}
               onPress={this.onCategorySubmit.bind(this)}
             />
+            </View>
           </View>
         </CardSection>
         <CardSection style={{flex:9}}>
@@ -60,7 +62,7 @@ class  FlipCards extends Component {
 const styles = {
   textStyle: {
     alignSelf: 'center',
-    color: 'black',
+    color: 'white',
     fontSize: 30,
     fontWeight: '600',
     paddingTop: 5,
@@ -70,11 +72,11 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: 'transparent',
-    borderRadius: 5,
-    borderWidth: 0.3,
-    borderColor: 'black',
-    marginLeft: 3,
-    marginRight: 3
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: 'white',
+    marginLeft: 10,
+    marginRight: 10
   }
 };
 
