@@ -38,7 +38,11 @@ class  PlansList extends Component {
   render () {
     return (
       <View style={styles.container} >
-        <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/4c/5a/35/4c5a3585ebb98a6f10df0ff9d4445e50--tumblr-iphone-wallpaper-city-wallpaper.jpg'}} style={styles.container}>
+        <Image 
+        source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/4c/5a/35/4c5a3585ebb98a6f10df0ff9d4445e50--tumblr-iphone-wallpaper-city-wallpaper.jpg'}} 
+        style={styles.container}
+        blurRadius={2}
+        >
           <ListView 
           enableEmptySections
           dataSource={this.dataSource}

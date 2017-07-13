@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
+import {  StyleSheet }  from 'react-native';
 import LoginForm from './components/LoginForm';
 import FlipCards from './components/FlipCards';
 import PlanCreate from './components/PlanCreate';
@@ -9,7 +10,11 @@ import PlanLocalesList from './components/PlanLocalesList';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
+    <Router 
+    navigationBarStyle={styles.navBar} 
+    titleStyle={styles.navTitle} 
+    sceneStyle={{ paddingTop: 65 }}
+    >
 
     <Scene key="auth">
           <Scene
@@ -58,5 +63,16 @@ const RouterComponent = () => {
     </Router>
   );
 };
-
+const styles = StyleSheet.create({
+  navBar: {
+    // flex: 1,
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    backgroundColor: 'transparent' // changing navbar color
+  },
+  navTitle: {
+    color: 'black' // changing navbar title color
+  }
+})
 export default RouterComponent;
