@@ -46,8 +46,8 @@ class  PlanLocalesList extends Component {
       fontWeight: 'bold',
       backgroundColor: 'green',
       onPress: () => {
-        console.log(planLocale.id);
-      Actions.LocaleShow({ id: planLocale.id });
+        console.log(planLocale.yelp_id);
+      Actions.LocaleShow({ id: planLocale.yelp_id });
       }
     }];
 
