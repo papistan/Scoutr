@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
+import { Image, View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
 import  Flip from './common/Flip'
 import { CardSection, Input} from './common';
 import { planFetch } from '../actions';
@@ -21,7 +21,9 @@ class  FlipCards extends Component {
    render(props) {
 
     return (
-      <View style={{flex:1, backgroundColor: 'lightblue'}}>
+      <View style={{flex: 1}}>
+      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
+      <View style={{flex:1}}>
         <CardSection style={{flex:1, paddingTop: 5}}>
           <View style={{flex: 1, flexDirection: 'row'}}>
             <Input
@@ -35,7 +37,7 @@ class  FlipCards extends Component {
             <Button
               title="GO"
               color="#000"
-              style={{flex: 1}}
+              style={styles.goButtonStyle}
               onPress={this.onCategorySubmit.bind(this)}
             />
             </View>
@@ -54,7 +56,8 @@ class  FlipCards extends Component {
         </TouchableOpacity>
       </CardSection>
       </View>
-
+      </Image>
+    </View>
     );
   }
 }
@@ -77,6 +80,13 @@ const styles = {
     borderColor: 'white',
     marginLeft: 10,
     marginRight: 10
+  },
+  goButtonStyle: {
+    flex: 1,
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: 'white',
+    color: 'white'
   }
 };
 
