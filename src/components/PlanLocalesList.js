@@ -15,13 +15,13 @@ class  PlanLocalesList extends Component {
   componentWillMount() {
     this.props.planLocalesFetch(plan = this.props.rowPlan);
     this.createDataSource(this.props);
-   
+
   }
   componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps)
   }
   createDataSource({planLocales}) {
-    
+
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
@@ -39,12 +39,23 @@ class  PlanLocalesList extends Component {
       })
       .catch((error) => console.log(error));
 
-    }
+      }
+    }]
+    let swipeBtnsLeft = [{
+      text: 'Details',
+      fontWeight: 'bold',
+      backgroundColor: 'green',
+      onPress: () => {
+        console.log(planLocale.id);
+      Actions.LocaleShow({ id: planLocale.id });
+      }
     }];
+
     return (
 
       <Swipeout
       right={swipeBtns}
+      left={swipeBtnsLeft}
       autoClose={true}
       backgroundColor= 'transparent'>
 
@@ -65,7 +76,7 @@ class  PlanLocalesList extends Component {
     Communications.text(phoneNumber, `Check out these spots in ${plan.district}: ${localez}`)
   }
   onTextPress () {
-  
+
   AlertIOS.prompt(
       'Enter phone #',
       null,
@@ -77,7 +88,7 @@ class  PlanLocalesList extends Component {
 
       <View style={styles.container}>
         <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/bc/8d/5f/bc8d5f496fbb5cf4f760231b8a5301ff--san-francisco-california-california-usa.jpg'}} style={styles.container}>
-        
+
         <ListView
           enableEmptySections={true}
           dataSource={this.dataSource}

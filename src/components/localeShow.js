@@ -3,16 +3,16 @@ import { Text, View } from 'react-native';
 import axios from 'axios';
 
 class  localeShow extends Component {
-  state = { id: 'the-temporarium-coffee-and-tea-san-francisco', loading: true }
+  state = { loading: true }
   componentWillMount(){
-    axios.get(`http://localhost:3000/locales/${this.state.id}`).then((response) => {
+    axios.get(`https://localites.herokuapp.com/locales/${this.props.id}`).then((response) => {
       this.setState({location: response.data, loading: false})
       console.log(this.state.location);
     });
   }
   renderShow(){
     if (this.state.loading) {
-      return <Text> not done </Text>
+      return <Text> loading... </Text>
     }
     return(
 
