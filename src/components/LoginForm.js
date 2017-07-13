@@ -31,11 +31,11 @@ class  LoginForm extends Component {
     return (
       <View style={{flex: 1}}>
       <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
-       
+
        <View >
         <CardSection >
           <Text style={styles.logo}>
-          scoutr
+          Scoutr.
           </Text>
         </CardSection>
       </View>
@@ -89,7 +89,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     color: 'white',
-    fontFamily: 'Helvetica',
+    fontFamily: 'avenir next',
     fontSize: 70,
     fontWeight: 'bold',
     marginLeft: 60,
