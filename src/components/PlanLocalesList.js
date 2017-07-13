@@ -88,7 +88,7 @@ class  PlanLocalesList extends Component {
           <View style={styles.buttonStyle}>
           </View>
           <Button onPress={this.onTextPress.bind(this)}>
-            text📞
+            text
           </Button>
         </CardSection>
 

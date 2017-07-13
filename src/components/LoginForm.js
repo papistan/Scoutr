@@ -34,8 +34,6 @@ class  LoginForm extends Component {
        
        <View >
         <CardSection >
-          <Text>
-          </Text>
           <Text style={styles.logo}>
           scoutr
           </Text>
@@ -92,12 +90,19 @@ const styles = {
     alignItems: 'center',
     color: 'white',
     fontFamily: 'Helvetica',
-    fontSize: 90,
+    fontSize: 70,
     fontWeight: 'bold',
-    marginLeft: 30,
+    marginLeft: 60,
     // marginLeft: 120,
     marginTop: 150
   }
+  // logoContainerStyle: {
+  //   flex: 1,
+  //   backgroundColor: 'transparent',
+  //   borderRadius: 70,
+  //   borderWidth: 3,
+  //   borderColor: 'white',
+ 
 };
 
 const mapStateToProps = ({auth}) => { // comes from index reducer
