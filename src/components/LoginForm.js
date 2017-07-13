@@ -37,7 +37,7 @@ class  LoginForm extends Component {
           <Text>
           </Text>
           <Text style={styles.logo}>
-          Scoutr
+          scoutr
           </Text>
         </CardSection>
       </View>
@@ -80,11 +80,11 @@ const styles = {
     backgroundColor: 'transparent'
   },
   loginButton: {
-    flex: 4
+    flex: 4,
+
   },
    loginForm: {
-    // flex: 5,
-    color: 'white'
+    flex: 5
   },
   logo: {
     flex: 1,
