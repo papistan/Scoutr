@@ -13,6 +13,7 @@
 		"react-native": "0.45.1",
 		"react-native-communications": "^2.2.1",
 		"react-native-form-validation": "^1.0.4",
+		"react-native-image-slider": "^1.1.5",
 		"react-native-router-flux": "^3.41.0",
 		"react-native-swipe-cards": "^0.1.0",
 		"react-native-swipe-list-view": "^0.4.1",
