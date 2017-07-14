@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Image, View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
+import { TextInput, Image, View, Text, StyleSheet, Button, TouchableOpacity}  from 'react-native';
 import  Flip from './common/Flip'
-import { CardSection, Input} from './common';
+import { CardSection } from './common';
 import { planFetch } from '../actions';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
@@ -22,14 +22,20 @@ class  FlipCards extends Component {
 
     return (
       <View style={{flex: 1}}>
-      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/b7/cb/71/b7cb7135bb30fa29778c5d4dff33fae6.jpg'}} style={{flex: 1}}>
+      <Image 
+      source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} 
+      style={{flex: 1}}
+      blurRadius={12}
+      >
       <View style={{flex:1}}>
         <CardSection style={{flex:1, paddingTop: 5}}>
           <View style={{flex: 1, flexDirection: 'row'}}>
-            <Input
-            style={{flex: 9, color: 'black' }}
-            label="Type:"
-            placeholder="eg. bar, gym or park..."
+            <TextInput
+            autoCorrect={false}
+            autoCapitalize={'none'}
+            style={styles.inputStyle}
+            // label="Type:"
+            placeholder="Category: eg. bar, gym or park..."
             onChangeText={value => this.props.planUpdate({prop: 'category', value})}
             value={this.props.category}
             />
@@ -86,7 +92,17 @@ const styles = {
     borderRadius: 25,
     borderWidth: 3,
     borderColor: 'white',
-    color: 'white'
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  inputStyle: {
+    color: 'black',
+    fontWeight: '600',
+    paddingRight: 5,
+    paddingLeft: 5,
+    fontSize: 18,
+    lineHeight: 23,
+    flex: 9
   }
 };
 
