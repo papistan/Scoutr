@@ -8,7 +8,7 @@ class LocaleListItem extends Component {
   render() {
     const  locale  = this.props.planLocale;
     return (
-        <View >
+        <View style={{flex: 1}}>
           <CardSection style={styles.backgroundStyle}>
             <Image
               style={styles.thumbnailStyle}
@@ -17,8 +17,8 @@ class LocaleListItem extends Component {
             <CardSection style={styles.backgroundStyle}>
               <Text style={styles.headerTextStyle}>
               {locale.name}
-              {"\n"}
               <Text style={styles.addressStyle}>
+                {"\n"}
                 {locale.address}
               </Text>
             </Text>
@@ -38,7 +38,10 @@ const styles = {
     fontWeight: 'bold',
     fontFamily: 'helvetica',
     paddingLeft: 5,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    flex: 0.8,
+    textAlign: 'left',
+    flexWrap: 'wrap',
   },
   thumbnailStyle: {
     height: 80,
@@ -50,12 +53,14 @@ const styles = {
     color: 'white',
     fontWeight: 'bold',
     fontFamily: 'helvetica',
-    height: 80,
-    width: 80,
     backgroundColor: 'transparent'
   },
   backgroundStyle: {
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    flex:0.5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 };
 
