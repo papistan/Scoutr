@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Linking } from 'react-native';
 import axios from 'axios';
 import ImageSlider from 'react-native-image-slider';
-import { CardSection } from './common';
+import { CardSection, Spinner } from './common';
 
 class  localeShow extends Component {
   state = { loading: true }
@@ -14,14 +14,14 @@ class  localeShow extends Component {
   }
   renderShow(){
     if (this.state.loading) {
-      return <Text> loading... </Text>
+      return <Spinner />
     }
     return(
 
     <View style={{ flex:1 }}>
 
 
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, marginLeft: 20 }}>
         <Text style={styles.titleStyle}>
           {this.state.location.name}
         </Text>
@@ -30,7 +30,7 @@ class  localeShow extends Component {
       <View style={styles.containerStyle}>
 
         <ImageSlider
-          height={300}
+          height={298}
           images={[
           this.state.location.photos[1],
           this.state.location.photos[2],
@@ -58,7 +58,7 @@ class  localeShow extends Component {
           {"\n"}
         </Text>
         <Text style={styles.urlStyle}>
-          Link to Yelp: {this.state.location.url}
+          Link to Yelp: {Linking.openURL(this.state.location.url)}
         </Text>
 
       </View>

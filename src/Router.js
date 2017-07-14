@@ -31,8 +31,6 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Scouted Lists"
-          onLeft={() => Actions.LocaleShow()}
-          leftTitle='show'
         />
 
         <Scene
@@ -58,7 +56,7 @@ const RouterComponent = () => {
         <Scene
           key="LocaleShow"
           component={localeShow}
-          title="show"
+          title="Details"
         />
 
       </Scene>
