@@ -5,6 +5,7 @@ import FlipCards from './components/FlipCards';
 import PlanCreate from './components/PlanCreate';
 import PlansList from './components/PlansList';
 import PlanLocalesList from './components/PlanLocalesList';
+import localeShow from './components/localeShow';
 
 
 const RouterComponent = () => {
@@ -30,6 +31,8 @@ const RouterComponent = () => {
           key="plansList"
           component={PlansList}
           title="Scouted Lists"
+          onLeft={() => Actions.LocaleShow()}
+          leftTitle='show'
         />
 
         <Scene
@@ -51,9 +54,13 @@ const RouterComponent = () => {
             key="planLocalesList"
             component={PlanLocalesList}
             title="Scouted Spots"
-          /> 
+          />
+        <Scene
+          key="LocaleShow"
+          component={localeShow}
+          title="show"
+        />
 
-          
       </Scene>
     </Router>
   );
