@@ -57,8 +57,11 @@ class  localeShow extends Component {
           Review Count: {this.state.location.review_count}
           {"\n"}
         </Text>
-        <Text style={styles.urlStyle}>
-          Link to Yelp: {Linking.openURL(this.state.location.url)}
+
+
+        <Text style={styles.urlStyle}
+              onPress={() => Linking.openURL(this.state.location.url)}>
+          View on Yelp
         </Text>
 
       </View>
@@ -80,6 +83,7 @@ class  localeShow extends Component {
 const styles = {
   titleStyle: {
     justifyContent: 'center',
+    alignSelf: 'center',
     fontSize: 30,
     fontFamily: 'avenir next'
   },
@@ -98,7 +102,8 @@ const styles = {
   },
   urlStyle:{
     fontSize: 10,
-    fontFamily: 'avenir next'
+    fontFamily: 'avenir next',
+    color: 'blue'
   }
 }
 
