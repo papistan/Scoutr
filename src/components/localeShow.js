@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Text, View, Linking } from 'react-native';
+import { Text, View, Linking, Image } from 'react-native';
 import axios from 'axios';
 import ImageSlider from 'react-native-image-slider';
 import { CardSection, Spinner } from './common';
@@ -19,53 +19,50 @@ class  localeShow extends Component {
     return(
 
     <View style={{ flex:1 }}>
+      <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/originals/fe/b5/4a/feb54a8e9c9a8d15357d8787bf126c7c.jpg'}} style={{flex: 1}}>
 
 
-      <View style={{ flex: 1, marginLeft: 20 }}>
-        <Text style={styles.titleStyle}>
-          {this.state.location.name}
-        </Text>
-      </View>
+        <View style={{ flex: 1.5 }}>
+          <Text style={styles.titleStyle}>
+            {this.state.location.name}
+          </Text>
+        </View>
 
-      <View style={styles.containerStyle}>
+        <View style={styles.containerStyle}>
 
-        <ImageSlider
-          height={298}
-          images={[
-          this.state.location.photos[1],
-          this.state.location.photos[2],
-          this.state.location.photos[0]
-        ]}/>
+          <ImageSlider
+            height={298}
+            images={[
+            this.state.location.photos[1],
+            this.state.location.photos[2],
+            this.state.location.photos[0]
+          ]}/>
+        </View>
 
-      </View>
+        <View style={styles.bodyStyle}>
+          <Text style={styles.textStyle}>
+            {this.state.location.location.display_address[0]}
+            {"\n"}
+            {this.state.location.location.display_address[1]}
+            {"\n"}
+            {this.state.location.display_phone}
+          </Text>
 
-      <View style={styles.bodyStyle}>
+          <Text style={styles.textStyle}>
+            Price: {this.state.location.price}
+            {"\n"}
+            Rating: {this.state.location.rating} out of 5
+            {"\n"}
+            Review Count: {this.state.location.review_count}
+            {"\n"}
+          </Text>
 
-        <Text style={styles.textStyle}>
-          {this.state.location.location.display_address[0]}
-          {"\n"}
-          {this.state.location.location.display_address[1]}
-          {"\n"}
-          {this.state.location.display_phone}
-        </Text>
-
-        <Text style={styles.textStyle}>
-          Price: {this.state.location.price}
-          {"\n"}
-          Rating: {this.state.location.rating} out of 5
-          {"\n"}
-          Review Count: {this.state.location.review_count}
-          {"\n"}
-        </Text>
-
-
-        <Text style={styles.urlStyle}
-              onPress={() => Linking.openURL(this.state.location.url)}>
-          View on Yelp
-        </Text>
-
-      </View>
-
+          <Text style={styles.urlStyle}
+                onPress={() => Linking.openURL(this.state.location.url)}>
+            View on Yelp
+          </Text>
+        </View>
+      </Image>
     </View>
       );
   }
@@ -73,7 +70,7 @@ class  localeShow extends Component {
   render () {
 
     return (
-      <View style={{ flex: 1, marginTop: 50 }}>
+      <View style={{ flex: 1 }}>
       {this.renderShow()}
       </View>
       );
@@ -85,13 +82,16 @@ const styles = {
     justifyContent: 'center',
     alignSelf: 'center',
     fontSize: 30,
-    fontFamily: 'avenir next'
+    fontFamily: 'avenir next',
+    backgroundColor: 'transparent',
+    marginTop: 30
   },
   bodyStyle: {
     flex: 3,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginLeft: 20
+    marginLeft: 20,
+    backgroundColor: 'transparent'
   },
   containerStyle: {
     flex: 5

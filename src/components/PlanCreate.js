@@ -22,7 +22,7 @@ class PlanCreate extends Component {
         <CardSection>
           <Input
             label="Title"
-            placeholder="New Plan"
+            placeholder="name your list"
             autoCorrect={false}
             minLength = {3}
             value={this.props.title}
@@ -54,7 +54,7 @@ class PlanCreate extends Component {
           <Button
           style={{flex:9}}
           onPress={this.onButtonPress.bind(this)}>
-            Create Plan
+            Create Locale List
           </Button>
         </CardSection>
       </View>

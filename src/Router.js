@@ -11,9 +11,9 @@ import localeShow from './components/localeShow';
 
 const RouterComponent = () => {
   return (
-    <Router 
-    navigationBarStyle={styles.navBar} 
-    titleStyle={styles.navTitle} 
+    <Router
+    navigationBarStyle={styles.navBar}
+    titleStyle={styles.navTitle}
     sceneStyle={{ paddingTop: 65 }}
     >
 
@@ -32,7 +32,7 @@ const RouterComponent = () => {
 
         <Scene
           onRight={() => Actions.createPlan()}
-          rightTitle='Create Plan'
+          rightTitle='Create List'
           key="plansList"
           component={PlansList}
           title="Scouted Lists"
