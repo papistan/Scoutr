@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Text, View } from 'react-native';
 import axios from 'axios';
+import { CardSection } from './common';
 
 class  localeShow extends Component {
   state = { loading: true }
@@ -17,10 +18,14 @@ class  localeShow extends Component {
     return(
 
       <View>
-      <Text style={{ fontSize: 20 }}>
-        {this.state.location.name}
-        {"\n"}
-      </Text>
+      <CardSection>
+        <Text style={{ fontSize: 30 }}>
+          {this.state.location.name}
+          {"\n"}
+        </Text>
+      </CardSection>
+
+      
       <Text style={{ fontSize: 20 }}>
         {this.state.location.location.display_address[0]}
         {"\n"}

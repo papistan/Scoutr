@@ -48,6 +48,7 @@ class  PlanLocalesList extends Component {
       onPress: () => {
         console.log(planLocale.yelp_id);
       Actions.LocaleShow({ id: planLocale.yelp_id });
+      console.log(planLocale);
       }
     }];
 
