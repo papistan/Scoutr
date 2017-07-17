@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     overflow: 'hidden',
-    borderColor: 'pink',
+    borderColor: 'gray',
     backgroundColor: 'white',
     borderWidth: 1,
     elevation: 1,
