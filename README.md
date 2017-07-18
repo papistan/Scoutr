@@ -7,3 +7,5 @@ Scoutr encourages fun and efficient exploration of locations. Scoutr uses data f
 Scoutr is a decoupled application that uses React Native on the front end, and Rails 5 not the backend.
 
 ![alt text](https://media.giphy.com/media/24b4l5X0RUQyA/giphy.gif)
+![alt text](https://media.giphy.com/media/TqtjC6ia8Mp5C/giphy.gif)
+
