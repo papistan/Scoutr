@@ -11,3 +11,6 @@ Scoutr is a decoupled application that uses React Native on the front end, and R
 
 ![alt text](https://media.giphy.com/media/TqtjC6ia8Mp5C/giphy.gif)
 
+![alt text](https://media.giphy.com/media/LaawXYtsqg9ZS/giphy.gif)
+
+
