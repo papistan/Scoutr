@@ -7,7 +7,7 @@ Scoutr encourages fun and efficient exploration of locations. It searches by cit
 
 When entering the application a user sees a their previously created location lists.  From there, they can select a list they'd like to view. When viewing the list of locations, they can slide items left or right to delete them or see details.
 
-![GIF of user lists and list page.](https://media.giphy.com/media/LaawXYtsqg9ZS/giphy.gif)      
+![GIF of user lists and list page.](https://media.giphy.com/media/eY3BSDGafWfg4/giphy.gif)      
 
 When users choose to create a list, they name their list, select a city, and enter a neighborhood where they'd like to explore.  This creates a new list for them, and the list is built as they swipe left or right through a set of images representing each location to either reject or select it for addition to the list.
 
@@ -25,4 +25,8 @@ Users can also send a list to their friends via text either by keying in their p
 
 ## The Tech
 
-Scoutr is a decoupled application that uses React Native on the front end, and Rails 5 no the back end.  The back end is deployed to Heroku and serves data to our front end but is also ready to be developed as a Rails web app.  The user authentication is handled by Firebase as we have future plans to utilize its OAuth features.
+Scoutr is a decoupled application that uses React Native on the front-end, and Rails 5 on the back-end.
+
+The back-end is deployed to Heroku to serve data by managing relevant content in a PostgreSQL database and handling Yelp API calls, but it is also ready to be developed as an independent Rails web app.  The user authentication is handled by Firebase as we have future plans to utilize its OAuth features.
+
+The React Native front-end is
