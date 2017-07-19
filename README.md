@@ -1,3 +1,10 @@
+# Team
+
+- Jay Papisan
+- Mike Tarkington
+- Nicholas Kaser
+- Jun Ota
+
 # Problem
 Have you ever been to new place and felt overwhelmed or unsure of were to visit or eat.   Perhaps you will be traveling and want to check out the hotels in a certain area, or maybe you'd just like to plan a day out and you're curious about what's in he neighborhood you're visiting.  Well not to worry... Scoutr is here to help.
 # Solution
@@ -29,4 +36,7 @@ Scoutr is a decoupled application that uses React Native on the front-end, and R
 
 The back-end is deployed to Heroku to serve data by managing relevant content in a PostgreSQL database and handling Yelp API calls, but it is also ready to be developed as an independent Rails web app.  The user authentication is handled by Firebase as we have future plans to utilize its OAuth features.
 
-The React Native front-end is
+Here is the back-end repository for the application: https://github.com/MikeTarkington/localites
+
+The React Native front-end was chosen primarily for its advantages in developing simultaneously for both Android and iOS platforms.  Redux was utilized for controlling the flow of data throughout the front-end.  Axios handled HTTP GET and POST requests to our back-end.  We used several small open source libraries and one of particular importance was for the swiping animations.  We are likely to refine or replace this library as it has a few minor bugs.
+
