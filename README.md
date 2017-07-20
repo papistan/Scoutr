@@ -9,7 +9,7 @@ Three team members wrote all the code for the application over a two week sprint
 - Jun Ota (team planning and pitch design)
 
 # Problem
-Have you ever been to new place and felt overwhelmed or unsure of were to visit or eat.   Perhaps you will be traveling and want to check out the hotels in a certain area, or maybe you'd just like to plan a day out and you're curious about what's in he neighborhood you're visiting.  Well not to worry... Scoutr is here to help.
+Have you ever been to a new place and felt overwhelmed or unsure of where to visit or eat.   Perhaps you will be traveling and want to check out the hotels in a certain area, or maybe you'd just like to plan a day out and you're curious about what's in he neighborhood you're visiting.  Well not to worry... Scoutr is here to help.
 
 # Solution
 Scoutr encourages fun and efficient exploration of locations. It searches by city and neighborhood presenting the user with a series of photos to swipe through working much like the popular dating app Tindr. The app then builds a list of liked locations.  From the list, users are able to get more details on a location, delete a location, or text the list to a friend so they can share excursion plans.  Users are also able to build categorized lists to serve a specific purpose, like  finding all the hotels in a particular neighborhood. They could also plan a day trip starting with a cafe, then going for a walk in the park, and ending the night over cocktails.
