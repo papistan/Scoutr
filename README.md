@@ -8,11 +8,7 @@ Three team members wrote all the code for the application over a two week sprint
 - Nicholas Kaser
 - Jun Ota (team planning and pitch design)
 
-# Problem
-Have you ever been to a new place and felt overwhelmed or unsure of where to visit or eat.   Perhaps you will be traveling and want to check out the hotels in a certain area, or maybe you'd just like to plan a day out and you're curious about what's in he neighborhood you're visiting.  Well not to worry... Scoutr is here to help.
-
-# Solution
-Scoutr encourages fun and efficient exploration of locations. It searches by city and neighborhood presenting the user with a series of photos to swipe through working much like the popular dating app Tindr. The app then builds a list of liked locations.  From the list, users are able to get more details on a location, delete a location, or text the list to a friend so they can share excursion plans.  Users are also able to build categorized lists to serve a specific purpose, like  finding all the hotels in a particular neighborhood. They could also plan a day trip starting with a cafe, then going for a walk in the park, and ending the night over cocktails.
+Scoutr encourages fun and efficient exploration of locations. It searches by city and neighborhood presenting the user with a series of photos to swipe through working much like the popular dating app Tinder. The app then builds a list of liked locations.  From the list, users are able to get more details on a location, delete a location, or text the list to a friend so they can share excursion plans.  Users are also able to build categorized lists to serve a specific purpose, like  finding all the hotels in a particular neighborhood. They could also plan a day trip starting with a cafe, then going for a walk in the park, and ending the night over cocktails.
 
 ## How it Works
 
@@ -48,8 +44,6 @@ The React Native front-end was chosen primarily for its advantages in developing
 To run the app locally, the prerequisite deveopment environment needs to be installed.  Follow [these instructions](https://facebook.github.io/react-native/docs/getting-started.html) and select the "Building Projects with Native Code" tab.
 
 If/when React Native and its dependancies are installed, Scoutr can be run by cloning this repository and using the following commands in terminal:
-
-Note: Scoutr has not yet been optimized for the Android platform
 
 ```
 npm install
